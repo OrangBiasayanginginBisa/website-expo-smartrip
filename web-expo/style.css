@@ -23,3 +23,429 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* =========================================================
+   iPhone 16 Mockup
+   - Ukuran phone diatur lewat variabel --w (lebar bodi phone).
+   - Semua isi layar memakai satuan --u, yaitu 1pt layar iPhone 16
+     (lebar layar 393pt), jadi teks & elemen otomatis ikut
+     mengecil/membesar mengikuti ukuran phone.
+   - Rasio layar 1179 x 2556 (sama dengan iPhone 16 asli).
+   ========================================================= */
+
+.iphone16 {
+  --w: 220px;
+  --bezel: calc(var(--w) * 0.032);
+  --frame: #0b0c10;
+  --band: #4b4f59;
+
+  position: relative;
+  width: var(--w);
+  padding: var(--bezel);
+  border-radius: calc(var(--w) * 0.172);
+  background: var(--frame);
+  box-shadow:
+    inset 0 0 0 calc(var(--w) * 0.007) var(--band),
+    inset 0 0 0 calc(var(--w) * 0.012) #16171c,
+    0 40px 70px -20px rgba(15, 23, 42, 0.45),
+    0 14px 28px -12px rgba(15, 23, 42, 0.35);
+}
+
+/* Ukuran: phone tengah (utama) & phone samping */
+.iphone16--main { --w: 220px; }
+.iphone16--side { --w: 168px; }
+
+@media (min-width: 640px) {
+  .iphone16--main { --w: 272px; }
+  .iphone16--side { --w: 220px; }
+}
+
+/* ---------- Tombol fisik ---------- */
+/* Volume atas & bawah (kiri) */
+.iphone16::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--w) * -0.011);
+  top: 21.5%;
+  width: calc(var(--w) * 0.014);
+  height: 7%;
+  border-radius: 3px 0 0 3px;
+  background: var(--band);
+  box-shadow: 0 calc(var(--w) * 0.2) 0 0 var(--band);
+}
+
+/* Tombol power (kanan) */
+.iphone16::after {
+  content: "";
+  position: absolute;
+  right: calc(var(--w) * -0.011);
+  top: 29%;
+  width: calc(var(--w) * 0.014);
+  height: 11.5%;
+  border-radius: 0 3px 3px 0;
+  background: var(--band);
+}
+
+/* Action button (kiri atas) */
+.iphone16__action {
+  position: absolute;
+  left: calc(var(--w) * -0.011);
+  top: 13.5%;
+  width: calc(var(--w) * 0.014);
+  height: 3.6%;
+  border-radius: 3px 0 0 3px;
+  background: var(--band);
+}
+
+/* Camera Control (khas iPhone 16, kanan bawah) */
+.iphone16__camctl {
+  position: absolute;
+  right: calc(var(--w) * -0.008);
+  top: 59%;
+  width: calc(var(--w) * 0.011);
+  height: 8.5%;
+  border-radius: 0 3px 3px 0;
+  background: #3a3d45;
+}
+
+/* ---------- Layar ---------- */
+.iphone16__screen {
+  --u: calc(100cqw / 393);
+
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1179 / 2556;
+  border-radius: calc(var(--w) * 0.14);
+  background: #f8fafc;
+  color: #0f172a;
+  text-align: left;
+  line-height: 1.25;
+  container-type: inline-size;
+}
+
+/* kilau tipis di kaca layar */
+.iphone16__screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 35%);
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* Dynamic Island */
+.iphone16__island {
+  position: absolute;
+  top: calc(var(--u) * 11);
+  left: 50%;
+  width: calc(var(--u) * 126);
+  height: calc(var(--u) * 37);
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #000;
+  z-index: 5;
+}
+
+/* Status bar (jam + sinyal/wifi/baterai) */
+.iphone16__status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--u) * 59);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 calc(var(--u) * 34) 0 calc(var(--u) * 44);
+  font-size: calc(var(--u) * 16);
+  font-weight: 700;
+  color: #0f172a;
+  z-index: 4;
+}
+
+.iphone16__status-icons {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 6);
+  font-size: calc(var(--u) * 14);
+}
+
+/* Home indicator */
+.iphone16__home {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--u) * 8);
+  width: calc(var(--u) * 134);
+  height: calc(var(--u) * 5);
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #0f172a;
+  z-index: 4;
+}
+
+/* ---------- Isi aplikasi di dalam layar ---------- */
+.i16-ui {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 14);
+  padding: calc(var(--u) * 66) calc(var(--u) * 18) 0;
+}
+
+.i16-head { text-align: center; }
+
+.i16-eyebrow {
+  font-size: calc(var(--u) * 12);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.i16-title {
+  margin-top: calc(var(--u) * 3);
+  font-size: calc(var(--u) * 23);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #0f172a;
+}
+
+.i16-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(var(--u) * 44);
+  padding: 0 calc(var(--u) * 16);
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: #fff;
+  color: #94a3b8;
+  font-size: calc(var(--u) * 14);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+.i16-card {
+  padding: calc(var(--u) * 14) calc(var(--u) * 16);
+  border: 1px solid #e2e8f0;
+  border-radius: calc(var(--u) * 20);
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+.i16-card--media {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.i16-card__body { padding: calc(var(--u) * 12) calc(var(--u) * 16) calc(var(--u) * 14); }
+
+.i16-label {
+  font-size: calc(var(--u) * 11);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.i16-label--blue  { color: #2563eb; }
+.i16-label--teal  { color: #0d9488; }
+.i16-label--slate { color: #94a3b8; }
+
+.i16-card__title {
+  margin-top: calc(var(--u) * 3);
+  font-size: calc(var(--u) * 19);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1e293b;
+}
+
+.i16-card__sub {
+  margin-top: calc(var(--u) * 2);
+  font-size: calc(var(--u) * 13);
+  color: #64748b;
+}
+.i16-card__sub--teal { color: #0d9488; font-weight: 600; }
+
+.i16-text {
+  margin-top: calc(var(--u) * 4);
+  font-size: calc(var(--u) * 13);
+  line-height: 1.4;
+  color: #475569;
+}
+
+/* Foto: otomatis mengisi sisa tinggi layar & di-crop rapi (object-fit: cover) */
+.i16-photo {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: calc(var(--u) * 22);
+  background: #cbd5e1;
+}
+.i16-photo--flat { border-radius: 0; }
+
+.i16-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.i16-tag {
+  position: absolute;
+  left: calc(var(--u) * 12);
+  bottom: calc(var(--u) * 12);
+  padding: calc(var(--u) * 5) calc(var(--u) * 11);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.8);
+  color: #fff;
+  font-size: calc(var(--u) * 11);
+  font-weight: 700;
+}
+
+/* Daftar populer (phone tengah) */
+.i16-section {
+  margin-bottom: calc(var(--u) * 8);
+  font-size: calc(var(--u) * 13);
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.i16-row {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 12);
+  margin-bottom: calc(var(--u) * 8);
+  padding: calc(var(--u) * 8);
+  border: 1px solid #e2e8f0;
+  border-radius: calc(var(--u) * 16);
+  background: #fff;
+}
+.i16-row > div { flex: 1; min-width: 0; }
+.i16-row__title { font-size: calc(var(--u) * 14); font-weight: 700; color: #1e293b; }
+.i16-row__sub   { font-size: calc(var(--u) * 11.5); color: #64748b; }
+.i16-row__chev  { font-size: calc(var(--u) * 11); color: #cbd5e1; padding-right: calc(var(--u) * 6); }
+
+.i16-thumb {
+  flex: none;
+  width: calc(var(--u) * 42);
+  height: calc(var(--u) * 42);
+  border-radius: calc(var(--u) * 12);
+  object-fit: cover;
+}
+.i16-thumb--grad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2563eb, #2dd4bf);
+  color: #fff;
+  font-size: calc(var(--u) * 17);
+}
+
+/* Tab bar bawah */
+.i16-tabbar {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 calc(var(--u) * -18);
+  padding: calc(var(--u) * 12) calc(var(--u) * 30) calc(var(--u) * 34);
+  border-top: 1px solid #e2e8f0;
+  background: rgba(248, 250, 252, 0.95);
+  color: #94a3b8;
+  font-size: calc(var(--u) * 20);
+}
+.i16-tabbar .is-active { color: #2563eb; }
+
+/* ---------- Tambahan: layar Ulasan (bagian "Ulasan Aplikasi") ---------- */
+.i16-rating {
+  margin-top: calc(var(--u) * 3);
+  font-size: calc(var(--u) * 20);
+  font-weight: 800;
+  color: #0f172a;
+}
+.i16-rating span { color: #f59e0b; letter-spacing: 0.05em; }
+
+.i16-reviews {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 12);
+}
+.i16-reviews > .i16-card { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+.i16-person {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--u) * 10);
+  margin-bottom: calc(var(--u) * 6);
+}
+.i16-avatar {
+  flex: none;
+  width: calc(var(--u) * 30);
+  height: calc(var(--u) * 30);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--u) * 11);
+  font-weight: 800;
+}
+.i16-avatar--blue { background: #dbeafe; color: #2563eb; }
+.i16-avatar--teal { background: #ccfbf1; color: #0d9488; }
+.i16-person__name  { font-size: calc(var(--u) * 13); font-weight: 800; color: #0f172a; }
+.i16-person__stars { font-size: calc(var(--u) * 10); color: #f59e0b; letter-spacing: 0.05em; }
+
+.i16-cta {
+  padding: calc(var(--u) * 14) calc(var(--u) * 16);
+  border-radius: calc(var(--u) * 20);
+  background: #2563eb;
+  color: #fff;
+  text-align: center;
+}
+.i16-cta__title { font-size: calc(var(--u) * 20); font-weight: 800; }
+.i16-cta__sub   { font-size: calc(var(--u) * 12); opacity: 0.9; }
+.i16-avatar--green { background: #d1fae5; color: #059669; }
+
+/* ---------- Tambahan: layar QR Code (bagian "Unduh App") ---------- */
+.i16-center { text-align: center; }
+.i16-heading {
+  font-size: calc(var(--u) * 23);
+  font-weight: 900;
+  line-height: 1.15;
+  color: #0f172a;
+}
+.i16-desc {
+  margin-top: calc(var(--u) * 8);
+  font-size: calc(var(--u) * 14);
+  line-height: 1.45;
+  color: #64748b;
+}
+.i16-qr {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  border-radius: calc(var(--u) * 24);
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+.i16-qr svg {
+  width: calc(var(--u) * 250);
+  height: calc(var(--u) * 250);
+  color: #0f172a;
+}
+.i16-brand {
+  font-size: calc(var(--u) * 12);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #2563eb;
+}

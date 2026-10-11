@@ -84,73 +84,161 @@
         Jelajahi beragam keindahan wisata Lampung, temukan destinasi menarik yang belum pernah kamu kunjungi, dan rencanakan perjalanan seru sesuai keinginanmu bersama SmartTrip.
       </p>
 
-      <!-- Mockup Showcase Gambar Handphone 3D -->
-      <div class="mt-12 sm:mt-16 relative flex items-center justify-center max-w-5xl mx-auto min-h-[360px] sm:min-h-[480px]">
-        
+      <!-- Mockup Showcase: Frame iPhone 16 (ukuran diatur di style.css -> .iphone16--main / .iphone16--side) -->
+      <div class="mt-12 sm:mt-16 relative flex items-center justify-center max-w-5xl mx-auto min-h-[470px] sm:min-h-[600px]">
+
         <!-- Left Side Phone -->
-        <div class="absolute left-1/2 -translate-x-[115%] sm:-translate-x-[130%] top-6 sm:top-10 w-44 sm:w-60 bg-slate-900 p-2 sm:p-3 rounded-[32px] sm:rounded-[40px] shadow-xl border-2 border-slate-700 transform -rotate-6 scale-90 sm:scale-95 opacity-90 transition hover:opacity-100 hover:rotate-0 z-10">
-          <div class="bg-slate-100 rounded-[24px] sm:rounded-[30px] p-3 text-left space-y-3">
-            <div class="flex justify-between items-center text-[10px] font-bold text-slate-400">
-              <span>9:41</span>
-              <i class="fa-solid fa-wifi"></i>
-            </div>
-            <div class="bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-sm">
-              <span class="text-[9px] font-extrabold text-blue-600 uppercase">Trip Journal</span>
-              <p class="text-xs font-bold text-slate-800 mt-0.5">Snorkeling Pahawang</p>
-              <p class="text-[10px] text-slate-500">Day 1 • Pesawaran</p>
-            </div>
-            <div class="h-28 bg-slate-200 rounded-xl overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80" alt="Pahawang" class="w-full h-full object-cover">
-              <span class="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] px-2 py-0.5 rounded-full font-bold">Hidden Gem</span>
+        <div class="absolute left-1/2 -translate-x-[115%] sm:-translate-x-[130%] top-6 sm:top-10 transform -rotate-6 scale-90 sm:scale-95 opacity-90 transition hover:opacity-100 hover:rotate-0 z-10">
+          <div class="iphone16 iphone16--side">
+            <span class="iphone16__action"></span>
+            <span class="iphone16__camctl"></span>
+            <div class="iphone16__screen">
+              <div class="iphone16__island"></div>
+              <div class="iphone16__status">
+                <span>9:41</span>
+                <span class="iphone16__status-icons">
+                  <i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i>
+                </span>
+              </div>
+
+              <div class="i16-ui">
+                <div class="i16-card">
+                  <p class="i16-label i16-label--blue">Trip Journal</p>
+                  <p class="i16-card__title">Snorkeling Pahawang</p>
+                  <p class="i16-card__sub">Day 1 • Pesawaran</p>
+                </div>
+
+                <div class="i16-photo">
+                  <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Pahawang">
+                  <span class="i16-tag">Hidden Gem</span>
+                </div>
+
+                <div class="i16-card">
+                  <p class="i16-label i16-label--slate">Catatan Perjalanan</p>
+                  <p class="i16-text">Air jernih dan terumbu karang masih terjaga. Cocok untuk pemula.</p>
+                </div>
+
+                <nav class="i16-tabbar">
+                  <i class="fa-solid fa-house"></i>
+                  <i class="fa-solid fa-compass is-active"></i>
+                  <i class="fa-solid fa-qrcode"></i>
+                </nav>
+              </div>
+
+              <div class="iphone16__home"></div>
             </div>
           </div>
         </div>
 
         <!-- Center Phone (Utama) -->
-        <div class="relative z-30 w-56 sm:w-72 bg-slate-950 p-2.5 sm:p-3.5 rounded-[36px] sm:rounded-[48px] shadow-2xl border-4 border-slate-800 transform hover:scale-105 transition duration-300">
-          <div class="w-20 sm:w-24 h-3.5 sm:h-4 bg-black rounded-full mx-auto mb-3"></div>
+        <div class="relative z-30 transform hover:scale-105 transition duration-300">
+          <div class="iphone16 iphone16--main">
+            <span class="iphone16__action"></span>
+            <span class="iphone16__camctl"></span>
+            <div class="iphone16__screen">
+              <div class="iphone16__island"></div>
+              <div class="iphone16__status">
+                <span>9:41</span>
+                <span class="iphone16__status-icons">
+                  <i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i>
+                </span>
+              </div>
 
-          <div class="bg-slate-50 rounded-[28px] sm:rounded-[36px] p-3.5 sm:p-4 text-left space-y-3 sm:space-y-4">
-            <div class="text-center pt-1">
-              <p class="text-[10px] font-bold text-slate-400 uppercase">SmartTrip Lampung</p>
-              <h3 class="text-sm sm:text-base font-extrabold text-slate-900 mt-0.5">Eksplor Lampung Sekarang!</h3>
-            </div>
+              <div class="i16-ui">
+                <div class="i16-head">
+                  <p class="i16-eyebrow">SmartTrip Lampung</p>
+                  <h3 class="i16-title">Eksplor Lampung Sekarang!</h3>
+                </div>
 
-            <!-- Search Mockup -->
-            <div class="bg-white border border-slate-200 rounded-full px-3 py-1.5 flex items-center justify-between text-xs text-slate-400 shadow-sm">
-              <span class="text-[10px] sm:text-xs">Cari Wisata & Kuliner...</span>
-              <i class="fa-solid fa-magnifying-glass text-slate-400"></i>
-            </div>
+                <!-- Search Mockup -->
+                <div class="i16-search">
+                  <span>Cari Wisata &amp; Kuliner...</span>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
 
-            <div class="bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
-              <p class="text-[10px] font-bold text-slate-400 uppercase">AI Recommendation</p>
-              <p class="text-xs font-bold text-slate-800 mt-1">Pantai Tanjung Setia Krui</p>
-              <p class="text-[10px] text-teal-600 font-semibold">Ombak Surfing Dunia</p>
-            </div>
+                <!-- Kartu rekomendasi (foto mengisi sisa ruang layar) -->
+                <div class="i16-card i16-card--media">
+                  <div class="i16-photo i16-photo--flat">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Pantai Tanjung Setia Krui">
+                  </div>
+                  <div class="i16-card__body">
+                    <p class="i16-label i16-label--slate">AI Recommendation</p>
+                    <p class="i16-card__title">Pantai Tanjung Setia Krui</p>
+                    <p class="i16-card__sub i16-card__sub--teal">Ombak Surfing Dunia</p>
+                  </div>
+                </div>
 
-            <div class="pt-2 border-t border-slate-200 flex justify-around text-slate-400 text-xs">
-              <i class="fa-solid fa-house text-blue-600"></i>
-              <i class="fa-solid fa-compass"></i>
-              <i class="fa-solid fa-qrcode"></i>
+                <div class="i16-list">
+                  <p class="i16-section">Populer di Lampung</p>
+                  <div class="i16-row">
+                    <img class="i16-thumb" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=160&q=80" alt="Pulau Pahawang">
+                    <div>
+                      <p class="i16-row__title">Pulau Pahawang</p>
+                      <p class="i16-row__sub">Snorkeling • Pesawaran</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right i16-row__chev"></i>
+                  </div>
+                  <div class="i16-row">
+                    <span class="i16-thumb i16-thumb--grad"><i class="fa-solid fa-water"></i></span>
+                    <div>
+                      <p class="i16-row__title">Teluk Kiluan</p>
+                      <p class="i16-row__sub">Lumba-lumba • Tanggamus</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right i16-row__chev"></i>
+                  </div>
+                </div>
+
+                <nav class="i16-tabbar">
+                  <i class="fa-solid fa-house is-active"></i>
+                  <i class="fa-solid fa-compass"></i>
+                  <i class="fa-solid fa-qrcode"></i>
+                </nav>
+              </div>
+
+              <div class="iphone16__home"></div>
             </div>
           </div>
         </div>
 
         <!-- Right Side Phone -->
-        <div class="absolute right-1/2 translate-x-[115%] sm:translate-x-[130%] top-6 sm:top-10 w-44 sm:w-60 bg-slate-900 p-2 sm:p-3 rounded-[32px] sm:rounded-[40px] shadow-xl border-2 border-slate-700 transform rotate-6 scale-90 sm:scale-95 opacity-90 transition hover:opacity-100 hover:rotate-0 z-10">
-          <div class="bg-slate-100 rounded-[24px] sm:rounded-[30px] p-3 text-left space-y-3">
-            <div class="flex justify-between items-center text-[10px] font-bold text-slate-400">
-              <span>9:41</span>
-              <i class="fa-solid fa-battery-full"></i>
-            </div>
-            <div class="bg-white p-2.5 rounded-xl border border-slate-200/80 shadow-sm">
-              <span class="text-[9px] font-extrabold text-teal-600 uppercase">Kuliner Khas</span>
-              <p class="text-xs font-bold text-slate-800 mt-0.5">Seruit Lampung</p>
-              <p class="text-[10px] text-slate-500">Sambal Tempoyak Otentik</p>
-            </div>
-            <div class="h-28 bg-slate-200 rounded-xl overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Kuliner" class="w-full h-full object-cover">
-              <span class="absolute bottom-2 left-2 bg-slate-900/80 text-white text-[9px] px-2 py-0.5 rounded-full font-bold">Kuliner Lokal</span>
+        <div class="absolute right-1/2 translate-x-[115%] sm:translate-x-[130%] top-6 sm:top-10 transform rotate-6 scale-90 sm:scale-95 opacity-90 transition hover:opacity-100 hover:rotate-0 z-10">
+          <div class="iphone16 iphone16--side">
+            <span class="iphone16__action"></span>
+            <span class="iphone16__camctl"></span>
+            <div class="iphone16__screen">
+              <div class="iphone16__island"></div>
+              <div class="iphone16__status">
+                <span>9:41</span>
+                <span class="iphone16__status-icons">
+                  <i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i>
+                </span>
+              </div>
+
+              <div class="i16-ui">
+                <div class="i16-card">
+                  <p class="i16-label i16-label--teal">Kuliner Khas</p>
+                  <p class="i16-card__title">Seruit Lampung</p>
+                  <p class="i16-card__sub">Sambal Tempoyak Otentik</p>
+                </div>
+
+                <div class="i16-photo">
+                  <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Kuliner">
+                  <span class="i16-tag">Kuliner Lokal</span>
+                </div>
+
+                <div class="i16-card">
+                  <p class="i16-label i16-label--slate">Rasa Khas</p>
+                  <p class="i16-text">Disajikan bersama ikan bakar dan lalapan segar khas Lampung.</p>
+                </div>
+
+                <nav class="i16-tabbar">
+                  <i class="fa-solid fa-house"></i>
+                  <i class="fa-solid fa-compass"></i>
+                  <i class="fa-solid fa-qrcode is-active"></i>
+                </nav>
+              </div>
+
+              <div class="iphone16__home"></div>
             </div>
           </div>
         </div>
@@ -185,41 +273,43 @@
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
         
         <!-- Screenshot Screen 1 -->
-        <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-sm space-y-3">
+        <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col gap-3">
           <p class="text-xs font-extrabold text-slate-800 text-center border-b pb-2">Rekomendasi Destinasi</p>
           <div class="h-44 bg-slate-100 rounded-2xl overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=500&q=80" alt="Destinasi" class="w-full h-full object-cover">
             <span class="absolute bottom-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Hidden Gems</span>
           </div>
           <p class="text-xs font-bold text-slate-800">Pulau Pahawang & Kelagian</p>
-          <p class="text-[11px] text-slate-500">Rekomendasi cerdas berbasis AI untuk aktivitas wisata bahari.</p>
+          <p class="text-[11px] text-slate-500 leading-relaxed">Rekomendasi cerdas berbasis AI untuk aktivitas wisata bahari.</p>
         </div>
 
         <!-- Screenshot Screen 2 -->
-        <div class="bg-slate-900 text-white p-4 rounded-3xl shadow-xl border border-slate-800 space-y-3">
-          <p class="text-xs font-extrabold text-teal-400 text-center border-b border-slate-800 pb-2">Itinerary Planning Agent</p>
-          <div class="bg-slate-800 p-3 rounded-2xl border border-slate-700 space-y-2">
+        <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col gap-3">
+          <p class="text-xs font-extrabold text-slate-800 text-center border-b pb-2">Itinerary Planning Agent</p>
+          <div class="h-44 bg-teal-50 p-4 rounded-2xl border border-teal-100 flex flex-col justify-center gap-4">
             <div class="flex justify-between text-[11px]">
-              <span class="text-slate-300">Hari 1: Dermaga Ketapang</span>
-              <span class="text-emerald-400 font-bold">08:00 WIB</span>
+              <span class="text-teal-900">Hari 1: Dermaga Ketapang</span>
+              <span class="text-teal-600 font-bold">08:00 WIB</span>
             </div>
             <div class="flex justify-between text-[11px]">
-              <span class="text-slate-300">Hari 1: Snorkeling Spot Nemo</span>
-              <span class="text-emerald-400 font-bold">10:30 WIB</span>
+              <span class="text-teal-900">Hari 1: Snorkeling Spot Nemo</span>
+              <span class="text-teal-600 font-bold">10:30 WIB</span>
             </div>
           </div>
-          <p class="text-xs font-bold text-slate-200">Penyusunan Rencana Otomatis</p>
+          <p class="text-xs font-bold text-slate-800">Penyusunan Rencana Otomatis</p>
+          <p class="text-[11px] text-slate-500 leading-relaxed">Menyusun urutan rencana perjalanan secara efisien dan otomatis.</p>
         </div>
 
         <!-- Screenshot Screen 3 -->
-        <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-sm space-y-3">
+        <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col gap-3">
           <p class="text-xs font-extrabold text-slate-800 text-center border-b pb-2">Crowd Prediction Agent</p>
-          <div class="bg-amber-50 p-3 rounded-2xl border border-amber-100 text-center">
-            <i class="fa-solid fa-users text-amber-600 text-xl mb-1"></i>
+          <div class="h-44 bg-amber-50 p-3 rounded-2xl border border-amber-100 text-center flex flex-col items-center justify-center">
+            <i class="fa-solid fa-users text-amber-600 text-2xl mb-2"></i>
             <p class="text-xs font-extrabold text-amber-900">Prediksi Kepadatan: Rendah</p>
             <p class="text-[10px] text-amber-700 mt-1">Waktu terbaik kunjungan: 09:00 - 11:00 WIB</p>
           </div>
           <p class="text-xs font-bold text-slate-800">Data Kunjungan Real-time</p>
+          <p class="text-[11px] text-slate-500 leading-relaxed">Memprediksi kepadatan pengunjung agar perjalanan lebih nyaman.</p>
         </div>
 
       </div>
@@ -318,21 +408,43 @@
           </div>
         </div>
 
-        <!-- Sebelah Kanan: Handphone dengan QR Code -->
+        <!-- Sebelah Kanan: Handphone dengan QR Code (frame iPhone 16) -->
         <div class="flex justify-center">
-          <div class="w-64 sm:w-72 bg-slate-900 p-3 rounded-[40px] shadow-2xl border-2 border-slate-700">
-            <div class="bg-white rounded-[32px] p-6 text-center text-slate-800 space-y-4">
-              <p class="text-sm font-black text-slate-900">Scan QR Code App</p>
-              <p class="text-xs text-slate-500">Pindai kode untuk mengunduh aplikasi SmartTrip secara langsung ke handphone kamu!</p>
-              
-              <!-- QR Code SVG -->
-              <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex justify-center">
-                <svg class="w-36 h-36 text-slate-900" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M2,2H10V10H2V2M4,4V8H8V4H4M11,2H13V4H11V2M14,2H22V10H14V2M16,4V8H20V4H16M2,14H10V22H2V14M4,16V20H8V16H4M11,6H13V8H11V6M11,10H13V12H11V10M11,14H13V16H11V14M11,18H13V20H11V18M14,11H16V13H14V11M17,11H19V13H17V11M20,11H22V13H20V11M14,14H16V16H14V14M17,14H19V16H17V14M20,14H22V16H20V14M14,17H16V19H14V17M17,17H19V19H17V17M20,17H22V19H20V17M14,20H16V22H14V20M17,20H19V22H17V20M20,20H22V22H20V20Z"/>
-                </svg>
+          <div class="iphone16 iphone16--main">
+            <span class="iphone16__action"></span>
+            <span class="iphone16__camctl"></span>
+            <div class="iphone16__screen">
+              <div class="iphone16__island"></div>
+              <div class="iphone16__status">
+                <span>9:41</span>
+                <span class="iphone16__status-icons">
+                  <i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i>
+                </span>
               </div>
 
-              <p class="text-[10px] font-extrabold text-blue-600 uppercase tracking-widest">SmartTrip Lampung App</p>
+              <div class="i16-ui">
+                <div class="i16-center">
+                  <p class="i16-heading">Scan QR Code App</p>
+                  <p class="i16-desc">Pindai kode untuk mengunduh aplikasi SmartTrip secara langsung ke handphone kamu!</p>
+                </div>
+
+                <!-- QR Code SVG -->
+                <div class="i16-qr">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2,2H10V10H2V2M4,4V8H8V4H4M11,2H13V4H11V2M14,2H22V10H14V2M16,4V8H20V4H16M2,14H10V22H2V14M4,16V20H8V16H4M11,6H13V8H11V6M11,10H13V12H11V10M11,14H13V16H11V14M11,18H13V20H11V18M14,11H16V13H14V11M17,11H19V13H17V11M20,11H22V13H20V11M14,14H16V16H14V14M17,14H19V16H17V14M20,14H22V16H20V14M14,17H16V19H14V17M17,17H19V19H17V17M20,17H22V19H20V17M14,20H16V22H14V20M17,20H19V22H17V20M20,20H22V22H20V20Z"/>
+                  </svg>
+                </div>
+
+                <p class="i16-brand">SmartTrip Lampung App</p>
+
+                <nav class="i16-tabbar">
+                  <i class="fa-solid fa-house"></i>
+                  <i class="fa-solid fa-compass"></i>
+                  <i class="fa-solid fa-qrcode is-active"></i>
+                </nav>
+              </div>
+
+              <div class="iphone16__home"></div>
             </div>
           </div>
         </div>
@@ -353,25 +465,77 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Sebelah Kiri: Gambar Handphone Aplikasi Kita -->
+        <!-- Sebelah Kiri: Gambar Handphone Aplikasi Kita (frame iPhone 16) -->
         <div class="lg:col-span-5 flex justify-center">
-          <div class="w-64 sm:w-72 bg-slate-950 p-3 rounded-[40px] shadow-xl border-4 border-slate-800">
-            <div class="w-20 h-3.5 bg-black rounded-full mx-auto mb-2"></div>
-            <div class="bg-slate-50 rounded-[30px] p-4 text-left space-y-3">
-              <div class="text-center">
-                <p class="text-[10px] font-bold text-slate-400 uppercase">Aplikasi SmartTrip</p>
-                <h4 class="text-xs font-extrabold text-slate-900 mt-0.5">Rating 4.9 ★★★★★</h4>
+          <div class="iphone16 iphone16--main">
+            <span class="iphone16__action"></span>
+            <span class="iphone16__camctl"></span>
+            <div class="iphone16__screen">
+              <div class="iphone16__island"></div>
+              <div class="iphone16__status">
+                <span>9:41</span>
+                <span class="iphone16__status-icons">
+                  <i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i>
+                </span>
               </div>
 
-              <div class="bg-white p-3 rounded-2xl border border-slate-200 space-y-2">
-                <p class="text-xs font-bold text-slate-800">Ulasan Pengguna Terbaru</p>
-                <p class="text-[10px] text-slate-500">"Sangat membantu pas liburan ke Lampung! Fitur itinerary-nya bikin pas jam perjalanan."</p>
+              <div class="i16-ui">
+                <div class="i16-head">
+                  <p class="i16-eyebrow">Aplikasi SmartTrip</p>
+                  <p class="i16-rating">Rating 4.9 <span>★★★★★</span></p>
+                </div>
+
+                <div class="i16-card">
+                  <p class="i16-card__title">Ulasan Pengguna Terbaru</p>
+                  <p class="i16-text">"Sangat membantu pas liburan ke Lampung! Fitur itinerary-nya bikin pas jam perjalanan."</p>
+                </div>
+
+                <div class="i16-reviews">
+                  <div class="i16-card">
+                    <div class="i16-person">
+                      <span class="i16-avatar i16-avatar--blue">AP</span>
+                      <div>
+                        <p class="i16-person__name">Andi Pratama</p>
+                        <p class="i16-person__stars">★★★★★</p>
+                      </div>
+                    </div>
+                    <p class="i16-text" style="margin-top:0">"Fitur prediksi kepadatannya akurat, jadi nggak perlu desak-desakan!"</p>
+                  </div>
+                  <div class="i16-card">
+                    <div class="i16-person">
+                      <span class="i16-avatar i16-avatar--teal">SN</span>
+                      <div>
+                        <p class="i16-person__name">Siti Nurhaliza</p>
+                        <p class="i16-person__stars">★★★★★</p>
+                      </div>
+                    </div>
+                    <p class="i16-text" style="margin-top:0">"Fitur penyusunan itinerary cerdasnya juara!"</p>
+                  </div>
+                  <div class="i16-card">
+                    <div class="i16-person">
+                      <span class="i16-avatar i16-avatar--green">R</span>
+                      <div>
+                        <p class="i16-person__name">Rian Hidayat</p>
+                        <p class="i16-person__stars">★★★★★</p>
+                      </div>
+                    </div>
+                    <p class="i16-text" style="margin-top:0">"Banyak rekomendasi wisata dan kuliner khas Lampung yang belum saya tahu."</p>
+                  </div>
+                </div>
+
+                <div class="i16-cta">
+                  <p class="i16-cta__title">2,400+ Download</p>
+                  <p class="i16-cta__sub">Wisatawan Aktif di Lampung</p>
+                </div>
+
+                <nav class="i16-tabbar">
+                  <i class="fa-solid fa-house is-active"></i>
+                  <i class="fa-solid fa-compass"></i>
+                  <i class="fa-solid fa-qrcode"></i>
+                </nav>
               </div>
 
-              <div class="bg-blue-600 text-white p-3 rounded-2xl text-center">
-                <p class="text-xs font-bold">2,400+ Download</p>
-                <p class="text-[9px] opacity-90">Wisatawan Aktif di Lampung</p>
-              </div>
+              <div class="iphone16__home"></div>
             </div>
           </div>
         </div>
