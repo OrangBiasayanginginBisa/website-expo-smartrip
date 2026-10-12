@@ -102,14 +102,14 @@
             </p>
 
             <div class="mt-8 flex items-start gap-4 bg-white rounded-2xl border border-slate-200 px-6 py-5 shadow-sm">
-              <span class="flex-none w-11 h-11 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm shadow-md shadow-blue-500/20"><i class="fa-solid fa-envelope"></i></span>
-              <p class="text-sm text-slate-600 leading-relaxed">Form ini membuka aplikasi email kamu dan mengirim masukan ke <span class="font-bold text-slate-900">info@smarttrip.dev</span>.</p>
+              <span class="flex-none w-11 h-11 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm shadow-md shadow-blue-500/20"><i class="fa-solid fa-inbox"></i></span>
+              <p class="text-sm text-slate-600 leading-relaxed">Masukanmu langsung tersimpan di sistem SmartTrip dan dibaca oleh tim kami.</p>
             </div>
           </div>
 
           <!-- Form -->
           <div class="lg:col-span-7">
-            <form action="mailto:info@smarttrip.dev" method="post" enctype="text/plain" class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+            <form id="fb-form" class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
@@ -165,8 +165,10 @@
           <textarea id="fb-pesan" name="Pesan" rows="5" required class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600" placeholder="Apa yang sudah bagus, dan apa yang perlu diperbaiki?"></textarea>
         </div>
 
+        <div id="fb-status" class="hidden rounded-xl px-4 py-3 text-sm font-bold"></div>
+
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
-          <p class="text-xs text-slate-500">Form ini akan membuka email ke info@smarttrip.dev.</p>
+          <p class="text-xs text-slate-500">Masukanmu akan tersimpan di sistem SmartTrip.</p>
           <button type="submit" class="inline-flex justify-center px-6 py-3 rounded-full bg-blue-600 text-white text-sm font-bold hover:bg-blue-700 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Kirim feedback</button>
         </div>
 
@@ -215,6 +217,58 @@
 
   <!-- File Custom JS -->
   <script src="script.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('fb-form');
+      var status = document.getElementById('fb-status');
+      var btn = form.querySelector('button[type="submit"]');
+      var baseBtn = 'inline-flex justify-center px-6 py-3 rounded-full text-white text-sm font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600';
+
+      function showStatus(kind, message) {
+        status.className = 'rounded-xl px-4 py-3 text-sm font-bold ' +
+          (kind === 'success'
+            ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+            : 'bg-red-50 text-red-700 border border-red-200');
+        status.textContent = message;
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var fd = new FormData(form);
+        var payload = {
+          nama: fd.get('Nama'),
+          email: fd.get('Email'),
+          topik: fd.get('Topik'),
+          penilaian: fd.get('Penilaian'),
+          pesan: fd.get('Pesan')
+        };
+        var original = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Mengirim...';
+        status.className = 'hidden';
+
+        try {
+          var res = await fetch('/api/ulasan', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          var data = await res.json().catch(function () { return {}; });
+          if (res.ok) {
+            form.reset();
+            showStatus('success', 'Terima kasih! Masukanmu sudah kami terima.');
+          } else {
+            showStatus('error', data.error || 'Gagal mengirim masukan. Coba lagi.');
+          }
+        } catch (err) {
+          showStatus('error', 'Tidak dapat terhubung ke server. Pastikan server SmartTrip sedang berjalan.');
+        } finally {
+          btn.disabled = false;
+          btn.textContent = original;
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>
