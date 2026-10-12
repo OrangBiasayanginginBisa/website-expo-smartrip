@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak - SmartTrip</title>
+  <meta name="description" content="Kenali SmartTrip, platform multi-agent AI untuk itinerary cerdas dan pemerataan destinasi wisata di Provinsi Lampung, serta cara menghubungi kami.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Link Custom CSS Eksternal -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .kontak-phone-front, .kontak-phone-back { --w: 168px; }
+    @media (min-width: 640px) { .kontak-phone-front, .kontak-phone-back { --w: 190px; } }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+  <!-- ================= NAVBAR (sama di semua halaman) ================= -->
+  <header id="site-nav" class="site-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+
+        <!-- Logo SmartTrip -->
+        <a href="index.html" class="flex items-center">
+          <img src="assets/images/logo.png" alt="SmartTrip - Rencanakan perjalananmu dengan lebih cerdas"
+            class="h-12 sm:h-14 w-auto">
+        </a>
+
+        <!-- Menu Desktop -->
+        <nav class="hidden lg:flex items-center h-full text-sm font-bold text-slate-600" aria-label="Menu utama">
+          <a href="index.html" class="nav-link">Beranda</a>
+          <a href="destinasi.html" class="nav-link">Rekomendasi</a>
+          <a href="fitur.html" class="nav-link">Fitur</a>
+          <a href="pjbl.html" class="nav-link">Info PjBL</a>
+          <a href="ulasan.html" class="nav-link">Ulasan</a>
+          <a href="kontak.html#kontak" class="nav-link is-active" aria-current="page">Kontak</a>
+        </nav>
+
+        <!-- Tombol CTA Nav -->
+        <div class="hidden lg:flex items-center">
+          <a href="unduh.html" class="nav-cta">Unduh App</a>
+        </div>
+
+        <!-- Hamburger (mobile & tablet) -->
+        <div class="lg:hidden flex items-center">
+          <button id="menu-btn" type="button" class="menu-btn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Menu Mobile (membuka dengan transisi tinggi) -->
+    <div id="mobile-menu" class="mobile-panel lg:hidden">
+      <div class="mobile-inner">
+        <a href="index.html" class="m-link">Beranda</a>
+        <a href="destinasi.html" class="m-link">Rekomendasi</a>
+        <a href="fitur.html" class="m-link">Fitur</a>
+        <a href="pjbl.html" class="m-link">Info PjBL</a>
+        <a href="ulasan.html" class="m-link">Ulasan</a>
+        <a href="kontak.html#kontak" class="m-link is-active" aria-current="page">Kontak</a>
+        <a href="unduh.html" class="nav-cta m-cta">Unduh App</a>
+      </div>
+    </div>
+
+    <div class="nav-progress" aria-hidden="true"></div>
+  </header>
+
+  <main class="bg-white">
+
+    <!-- Panel utama -->
+    <section class="py-12 md:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-sky-50 via-blue-50 to-white border border-blue-100 p-6 sm:p-10 lg:p-14">
+
+          <div class="w-full">
+            <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+              Tentang SmartTrip dan cara menghubungi kami
+            </h1>
+            <p class="mt-5 text-sm sm:text-base text-slate-600 leading-relaxed w-full">
+              SmartTrip adalah platform multi-agent AI untuk penyusunan itinerary cerdas dan pemerataan destinasi wisata di Provinsi Lampung. Tiga agen AI bekerja bersama untuk merekomendasikan destinasi, menyusun itinerary, dan memprediksi kepadatan.
+            </p>
+          </div>
+
+          <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-center">
+
+            <!-- Dua mockup HP saling tumpang tindih, rata tengah -->
+            <div class="relative mx-auto w-[300px] sm:w-[360px] h-[400px] sm:h-[460px]">
+
+              <div class="absolute right-0 top-4 z-10 rotate-[10deg]">
+                <div class="iphone16 iphone16--main kontak-phone-back">
+                  <span class="iphone16__action"></span>
+                  <span class="iphone16__camctl"></span>
+                  <div class="iphone16__screen relative">
+                    <div class="iphone16__island"></div>
+                    <img class="absolute inset-0 w-full h-full object-cover object-top" src="assets/images/itinerary%20.png" alt="Itinerary SmartTrip" loading="lazy" onerror="this.remove()">
+                  </div>
+                </div>
+              </div>
+
+              <div class="absolute left-0 bottom-4 z-20 -rotate-[8deg]">
+                <div class="iphone16 iphone16--main kontak-phone-front">
+                  <span class="iphone16__action"></span>
+                  <span class="iphone16__camctl"></span>
+                  <div class="iphone16__screen relative">
+                    <div class="iphone16__island"></div>
+                    <img class="absolute inset-0 w-full h-full object-cover object-top" src="assets/images/Home.png" alt="Beranda SmartTrip" loading="lazy" onerror="this.remove()">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Kartu fitur: disusun ke bawah -->
+            <div class="flex flex-col gap-4 w-full max-w-md mx-auto lg:mx-0">
+                <div class="flex items-center gap-5 bg-white rounded-2xl border border-slate-200 px-6 py-5 shadow-sm">
+                  <span class="flex-none w-12 h-12 rounded-full bg-blue-600 shadow-blue-500/20 text-white flex items-center justify-center text-lg shadow-md"><i class="fa-solid fa-compass"></i></span>
+                  <div class="min-w-0">
+                    <h3 class="text-base font-bold text-slate-900">Rekomendasi Destinasi</h3>
+                    <p class="mt-1 text-sm text-slate-600 leading-relaxed">Pantai, pulau, alam, dan budaya Lampung yang sesuai dengan preferensimu.</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-5 bg-white rounded-2xl border border-slate-200 px-6 py-5 shadow-sm">
+                  <span class="flex-none w-12 h-12 rounded-full bg-amber-500 shadow-amber-500/20 text-white flex items-center justify-center text-lg shadow-md"><i class="fa-solid fa-route"></i></span>
+                  <div class="min-w-0">
+                    <h3 class="text-base font-bold text-slate-900">Penyusunan Itinerary Cerdas</h3>
+                    <p class="mt-1 text-sm text-slate-600 leading-relaxed">Susun dan optimalkan urutan rencana perjalanan secara efisien.</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-5 bg-white rounded-2xl border border-slate-200 px-6 py-5 shadow-sm">
+                  <span class="flex-none w-12 h-12 rounded-full bg-slate-900 shadow-slate-900/20 text-white flex items-center justify-center text-lg shadow-md"><i class="fa-solid fa-chart-line"></i></span>
+                  <div class="min-w-0">
+                    <h3 class="text-base font-bold text-slate-900">Prediksi Kepadatan</h3>
+                    <p class="mt-1 text-sm text-slate-600 leading-relaxed">Lihat perkiraan keramaian suatu destinasi sebelum berangkat, agar kunjungan lebih nyaman dan merata.</p>
+                  </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="pb-16 md:pb-24 scroll-mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Hubungi kami</h2>
+          <p class="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">Pertanyaan, masukan, atau ajakan kerja sama bisa disampaikan lewat kanal di bawah ini.</p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <a href="https://instagram.com/smarttrip_dev" target="_blank" rel="noopener" class="group bg-white p-7 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+            <span class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl shadow-md shadow-blue-500/20"><i class="fa-brands fa-instagram"></i></span>
+            <p class="mt-6 text-xs font-bold uppercase tracking-wider text-slate-500">Instagram</p>
+            <p class="mt-1 text-base font-extrabold text-slate-900 group-hover:text-blue-600 transition break-all">@smarttrip_dev</p>
+          </a>
+
+          <a href="mailto:info@smarttrip.dev" class="group bg-white p-7 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+            <span class="w-12 h-12 rounded-full bg-slate-900 text-white flex items-center justify-center text-xl shadow-md shadow-slate-900/20"><i class="fa-solid fa-envelope"></i></span>
+            <p class="mt-6 text-xs font-bold uppercase tracking-wider text-slate-500">Email</p>
+            <p class="mt-1 text-base font-extrabold text-slate-900 group-hover:text-blue-600 transition break-all">info@smarttrip.dev</p>
+          </a>
+
+          <div class="bg-white p-7 rounded-3xl border border-slate-200/80 shadow-sm">
+            <span class="w-12 h-12 rounded-full bg-amber-500 text-white flex items-center justify-center text-xl shadow-md shadow-amber-500/20"><i class="fa-solid fa-location-dot"></i></span>
+            <p class="mt-6 text-xs font-bold uppercase tracking-wider text-slate-500">Lokasi</p>
+            <p class="mt-1 text-base font-extrabold text-slate-900">Bandar Lampung, Indonesia</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+        <a href="index.html" class="inline-flex w-fit items-center rounded-xl bg-white px-3 py-2 shadow-sm">
+          <img src="assets/images/logo.png" alt="SmartTrip" class="h-10 w-auto">
+        </a>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-bold text-slate-300">
+          <a href="index.html" class="hover:text-white transition">Beranda</a>
+          <a href="destinasi.html" class="hover:text-white transition">Rekomendasi</a>
+          <a href="fitur.html" class="hover:text-white transition">Fitur</a>
+          <a href="pjbl.html" class="hover:text-white transition">Info PjBL</a>
+          <a href="kontak.html#kontak" class="hover:text-white transition">Kontak</a>
+          <a href="unduh.html" class="hover:text-white transition">Unduh App</a>
+        </div>
+      </div>
+      <div class="mb-8 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6 text-xs text-slate-300">
+        <a href="https://instagram.com/smarttrip_dev" target="_blank" rel="noopener" class="hover:text-white transition inline-flex items-center gap-2">
+          <i class="fa-brands fa-instagram"></i>@smarttrip_dev
+        </a>
+        <a href="mailto:info@smarttrip.dev" class="hover:text-white transition inline-flex items-center gap-2">
+          <i class="fa-solid fa-envelope"></i>info@smarttrip.dev
+        </a>
+        <span class="inline-flex items-center gap-2">
+          <i class="fa-solid fa-location-dot"></i>Bandar Lampung, Indonesia
+        </span>
+      </div>
+      <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        &copy; 2026 SmartTrip. All rights reserved. Platform Pariwisata Cerdas Lampung.
+      </div>
+    </div>
+  </footer>
+
+  <!-- File Custom JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SmartTrip - Temukan Pesona Tersembunyi Lampung</title>
-  
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- Google Fonts: Plus Jakarta Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
   <!-- Link Custom CSS Eksternal -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- ================= 1. BAGIAN ATAS (NAVBAR) ================= -->
-  <nav class="bg-white border-b border-slate-100 sticky top-0 z-50">
+    <!-- ================= NAVBAR (sama di semua halaman) ================= -->
+  <header id="site-nav" class="site-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-20 items-center">
-        
+
         <!-- Logo SmartTrip -->
-        <a href="#beranda" class="flex items-center gap-2.5">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-blue-600 to-teal-400 flex items-center justify-center text-white font-extrabold text-base shadow-md shadow-blue-500/20">
-            <i class="fa-solid fa-compass"></i>
-          </div>
-          <span class="text-xl font-black text-slate-900 tracking-tight">SmartTrip</span>
+        <a href="index.html" class="flex items-center">
+          <img src="assets/images/logo.png" alt="SmartTrip - Rencanakan perjalananmu dengan lebih cerdas"
+            class="h-12 sm:h-14 w-auto">
         </a>
 
-        <!-- Menu Navigation Desktop -->
-        <div class="hidden md:flex items-center space-x-8 text-sm font-bold text-slate-600">
-          <a href="#beranda" class="hover:text-blue-600 transition">Beranda</a>
-          <a href="#tentang" class="hover:text-blue-600 transition">Tentang kami</a>
-          <a href="#fitur" class="hover:text-blue-600 transition">Fitur</a>
-          <a href="#unduh" class="hover:text-blue-600 transition">Unduh App</a>
-          <a href="#ulasan" class="hover:text-blue-600 transition">Ulasan</a>
-          <a href="#kontak" class="hover:text-blue-600 transition">Kontak</a>
-        </div>
+        <!-- Menu Desktop -->
+        <nav class="hidden lg:flex items-center h-full text-sm font-bold text-slate-600" aria-label="Menu utama">
+          <a href="index.html" class="nav-link is-active" aria-current="page">Beranda</a>
+          <a href="destinasi.html" class="nav-link">Rekomendasi</a>
+          <a href="fitur.html" class="nav-link">Fitur</a>
+          <a href="pjbl.html" class="nav-link">Info PjBL</a>
+          <a href="ulasan.html" class="nav-link">Ulasan</a>
+          <a href="kontak.html#kontak" class="nav-link">Kontak</a>
+        </nav>
 
         <!-- Tombol CTA Nav -->
-        <div class="hidden md:flex items-center">
-          <a href="#unduh" class="px-5 py-2.5 rounded-full text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 transition shadow-md">
-            Unduh App
-          </a>
+        <div class="hidden lg:flex items-center">
+          <a href="unduh.html" class="nav-cta">Unduh App</a>
         </div>
 
-        <!-- Mobile Hamburger Button -->
-        <div class="md:hidden flex items-center">
-          <button id="menu-btn" class="p-2 text-slate-600 focus:outline-none" aria-label="Toggle Menu">
+        <!-- Hamburger (mobile & tablet) -->
+        <div class="lg:hidden flex items-center">
+          <button id="menu-btn" type="button" class="menu-btn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu">
             <i class="fa-solid fa-bars text-xl"></i>
           </button>
         </div>
@@ -59,186 +58,75 @@
       </div>
     </div>
 
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 py-4 space-y-3">
-      <a href="#beranda" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Beranda</a>
-      <a href="#tentang" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Tentang kami</a>
-      <a href="#fitur" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Fitur</a>
-      <a href="#unduh" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Unduh App</a>
-      <a href="#ulasan" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Ulasan</a>
-      <a href="#kontak" class="block text-sm font-semibold text-slate-700 hover:text-blue-600">Kontak</a>
+    <!-- Menu Mobile (membuka dengan transisi tinggi) -->
+    <div id="mobile-menu" class="mobile-panel lg:hidden">
+      <div class="mobile-inner">
+        <a href="index.html" class="m-link is-active" aria-current="page">Beranda</a>
+        <a href="destinasi.html" class="m-link">Rekomendasi</a>
+        <a href="fitur.html" class="m-link">Fitur</a>
+        <a href="pjbl.html" class="m-link">Info PjBL</a>
+        <a href="ulasan.html" class="m-link">Ulasan</a>
+        <a href="kontak.html#kontak" class="m-link">Kontak</a>
+        <a href="unduh.html" class="nav-cta m-cta">Unduh App</a>
+      </div>
     </div>
-  </nav>
 
-  <!-- ================= 2. SLOGAN & HERO SECTION ================= -->
-  <section id="beranda" class="pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden relative bg-white border-b border-slate-100">
+    <div class="nav-progress" aria-hidden="true"></div>
+  </header>
+
+<!-- ================= 2. SLOGAN & HERO SECTION ================= -->
+  <section id="beranda"
+    class="pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden relative bg-white border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      
+
       <!-- Slogan Utama -->
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight">
-        Temukan Pesona Tersembunyi Lampung, Ciptakan Cerita di Setiap Perjalanan.
+      <h1
+        class="text-3xl sm:text-5xl lg:text-4xl font-black text-slate-900 tracking-tight max-w-4xl mx-auto leading-tight">
+        Temukan Pesona Tersembunyi Lampung <br> Ciptakan Cerita di Setiap Perjalanan
       </h1>
 
       <!-- Deskripsi Hero -->
-      <p class="mt-5 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
-        Jelajahi beragam keindahan wisata Lampung, temukan destinasi menarik yang belum pernah kamu kunjungi, dan rencanakan perjalanan seru sesuai keinginanmu bersama SmartTrip.
+      <p class="mt-4 text-sm sm:text-base text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Jelajahi beragam keindahan wisata Lampung, temukan destinasi menarik yang belum pernah kamu kunjungi, dan
+        rencanakan perjalanan seru sesuai keinginanmu bersama SmartTrip.
       </p>
 
       <!-- Mockup Showcase: Frame iPhone 16 (ukuran diatur di style.css -> .iphone16--main / .iphone16--side) -->
-      <div class="mt-12 sm:mt-16 relative flex items-center justify-center max-w-5xl mx-auto min-h-[470px] sm:min-h-[600px]">
+      <div class="hero-showcase mt-10 sm:mt-14">
+        <div class="hero-halo"></div>
 
         <!-- Left Side Phone -->
-        <div class="absolute left-1/2 -translate-x-[115%] sm:-translate-x-[130%] top-6 sm:top-10 transform -rotate-6 scale-90 sm:scale-95 opacity-90 transition hover:opacity-100 hover:rotate-0 z-10">
+        <div class="hero-phone hero-phone--left">
           <div class="iphone16 iphone16--side">
             <span class="iphone16__action"></span>
             <span class="iphone16__camctl"></span>
             <div class="iphone16__screen">
               <div class="iphone16__island"></div>
-              <div class="iphone16__status">
-                <span>9:41</span>
-                <span class="iphone16__status-icons">
-                  <i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i>
-                </span>
-              </div>
-
-              <div class="i16-ui">
-                <div class="i16-card">
-                  <p class="i16-label i16-label--blue">Trip Journal</p>
-                  <p class="i16-card__title">Snorkeling Pahawang</p>
-                  <p class="i16-card__sub">Day 1 • Pesawaran</p>
-                </div>
-
-                <div class="i16-photo">
-                  <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=600&q=80" alt="Pahawang">
-                  <span class="i16-tag">Hidden Gem</span>
-                </div>
-
-                <div class="i16-card">
-                  <p class="i16-label i16-label--slate">Catatan Perjalanan</p>
-                  <p class="i16-text">Air jernih dan terumbu karang masih terjaga. Cocok untuk pemula.</p>
-                </div>
-
-                <nav class="i16-tabbar">
-                  <i class="fa-solid fa-house"></i>
-                  <i class="fa-solid fa-compass is-active"></i>
-                  <i class="fa-solid fa-qrcode"></i>
-                </nav>
-              </div>
-
-              <div class="iphone16__home"></div>
+              <img class="iphone16__shot" src="assets/images/draft_itinerary.png" alt="Draft itinerary SmartTrip">
             </div>
           </div>
         </div>
 
         <!-- Center Phone (Utama) -->
-        <div class="relative z-30 transform hover:scale-105 transition duration-300">
+        <div class="hero-phone hero-phone--main">
           <div class="iphone16 iphone16--main">
             <span class="iphone16__action"></span>
             <span class="iphone16__camctl"></span>
             <div class="iphone16__screen">
               <div class="iphone16__island"></div>
-              <div class="iphone16__status">
-                <span>9:41</span>
-                <span class="iphone16__status-icons">
-                  <i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i>
-                </span>
-              </div>
-
-              <div class="i16-ui">
-                <div class="i16-head">
-                  <p class="i16-eyebrow">SmartTrip Lampung</p>
-                  <h3 class="i16-title">Eksplor Lampung Sekarang!</h3>
-                </div>
-
-                <!-- Search Mockup -->
-                <div class="i16-search">
-                  <span>Cari Wisata &amp; Kuliner...</span>
-                  <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-
-                <!-- Kartu rekomendasi (foto mengisi sisa ruang layar) -->
-                <div class="i16-card i16-card--media">
-                  <div class="i16-photo i16-photo--flat">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Pantai Tanjung Setia Krui">
-                  </div>
-                  <div class="i16-card__body">
-                    <p class="i16-label i16-label--slate">AI Recommendation</p>
-                    <p class="i16-card__title">Pantai Tanjung Setia Krui</p>
-                    <p class="i16-card__sub i16-card__sub--teal">Ombak Surfing Dunia</p>
-                  </div>
-                </div>
-
-                <div class="i16-list">
-                  <p class="i16-section">Populer di Lampung</p>
-                  <div class="i16-row">
-                    <img class="i16-thumb" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=160&q=80" alt="Pulau Pahawang">
-                    <div>
-                      <p class="i16-row__title">Pulau Pahawang</p>
-                      <p class="i16-row__sub">Snorkeling • Pesawaran</p>
-                    </div>
-                    <i class="fa-solid fa-chevron-right i16-row__chev"></i>
-                  </div>
-                  <div class="i16-row">
-                    <span class="i16-thumb i16-thumb--grad"><i class="fa-solid fa-water"></i></span>
-                    <div>
-                      <p class="i16-row__title">Teluk Kiluan</p>
-                      <p class="i16-row__sub">Lumba-lumba • Tanggamus</p>
-                    </div>
-                    <i class="fa-solid fa-chevron-right i16-row__chev"></i>
-                  </div>
-                </div>
-
-                <nav class="i16-tabbar">
-                  <i class="fa-solid fa-house is-active"></i>
-                  <i class="fa-solid fa-compass"></i>
-                  <i class="fa-solid fa-qrcode"></i>
-                </nav>
-              </div>
-
-              <div class="iphone16__home"></div>
+              <img class="iphone16__shot" src="assets/images/Home.png" alt="Beranda SmartTrip">
             </div>
           </div>
         </div>
 
         <!-- Right Side Phone -->
-        <div class="absolute right-1/2 translate-x-[115%] sm:translate-x-[130%] top-6 sm:top-10 transform rotate-6 scale-90 sm:scale-95 opacity-90 transition hover:opacity-100 hover:rotate-0 z-10">
+        <div class="hero-phone hero-phone--right">
           <div class="iphone16 iphone16--side">
             <span class="iphone16__action"></span>
             <span class="iphone16__camctl"></span>
             <div class="iphone16__screen">
               <div class="iphone16__island"></div>
-              <div class="iphone16__status">
-                <span>9:41</span>
-                <span class="iphone16__status-icons">
-                  <i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i>
-                </span>
-              </div>
-
-              <div class="i16-ui">
-                <div class="i16-card">
-                  <p class="i16-label i16-label--teal">Kuliner Khas</p>
-                  <p class="i16-card__title">Seruit Lampung</p>
-                  <p class="i16-card__sub">Sambal Tempoyak Otentik</p>
-                </div>
-
-                <div class="i16-photo">
-                  <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Kuliner">
-                  <span class="i16-tag">Kuliner Lokal</span>
-                </div>
-
-                <div class="i16-card">
-                  <p class="i16-label i16-label--slate">Rasa Khas</p>
-                  <p class="i16-text">Disajikan bersama ikan bakar dan lalapan segar khas Lampung.</p>
-                </div>
-
-                <nav class="i16-tabbar">
-                  <i class="fa-solid fa-house"></i>
-                  <i class="fa-solid fa-compass"></i>
-                  <i class="fa-solid fa-qrcode is-active"></i>
-                </nav>
-              </div>
-
-              <div class="iphone16__home"></div>
+              <img class="iphone16__shot" src="assets/images/itinerary%20.png" alt="Itinerary SmartTrip">
             </div>
           </div>
         </div>
@@ -248,68 +136,55 @@
     </div>
   </section>
 
-  <!-- ================= 3. TENTANG APLIKASI ================= -->
-  <section id="tentang" class="py-20 bg-slate-50">
+  <!-- ================= 3. TENTANG LAMPUNG ================= -->
+  <section id="tentang" class="pt-10 pb-16 md:pt-14 md:pb-24 bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-3xl mx-auto mb-14">
-        <h2 class="text-xs font-black uppercase tracking-widest text-blue-600 mb-2">Mengenal SmartTrip</h2>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">Tentang Aplikasi</h3>
-        
-        <div class="text-sm sm:text-base text-slate-600 leading-relaxed space-y-4 text-justify sm:text-center">
-          <p>
-            Selamat datang di <b>SmartTrip</b>—panduan perjalanan digital serba ada yang dirancang khusus untuk menemani setiap petualangan Anda di Bandar Lampung.
+
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Tentang Lampung</h2>
+
+      <div class="mt-5 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+        <!-- Kolom kiri: deskripsi -->
+        <div class="lg:col-span-7">
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed max-w-[65ch]">
+            Lampung berada di ujung selatan Pulau Sumatera, dipisahkan dari Pulau Jawa oleh Selat Sunda. Lewat Pelabuhan
+            Bakauheni, provinsi ini menjadi pintu masuk utama bagi siapa pun yang menyeberang dari Jawa ke Sumatera.
           </p>
-          <p>
-            Berawal dari kekaguman akan potensi pariwisata daerah yang luar biasa, SmartTrip lahir dengan satu tekad: membuat keindahan Lampung terjangkau dan dapat dinikmati oleh siapa saja, kapan saja. Mulai dari keasrian wisata alam tersembunyi (<i>hidden gems</i>), kekayaan seni dan budaya, hingga kelezatan kuliner otentik yang memanjakan lidah.
+
+          <p class="mt-6 text-sm sm:text-base text-slate-600 leading-relaxed max-w-[65ch]">
+            Luas daratan Lampung sekitar 35.288 km². Ibu kotanya adalah Bandar Lampung, dan provinsi ini terdiri dari
+            13 kabupaten dan 2 kota dengan jumlah penduduk lebih dari 9 juta jiwa. Semboyan daerahnya adalah
+            <i>Sai Bumi Ruwa Jurai</i>.
           </p>
-          <p>
-            Kami percaya bahwa perjalanan terbaik bukan hanya tentang mengunjungi tempat baru, tetapi juga tentang merasakan kearifan lokal dan membawa dampak positif bagi masyarakat setempat.
+
+          <p class="mt-6 text-sm sm:text-base text-slate-600 leading-relaxed max-w-[65ch]">
+            <i>Ruwa Jurai</i> berarti &ldquo;dua garis keturunan&rdquo;, merujuk pada dua kelompok adat besar Lampung:
+            Saibatin di wilayah pesisir dan Pepadun di wilayah pedalaman. Selain masyarakat adat, Lampung juga dihuni
+            warga dari berbagai suku lain, terutama lewat program transmigrasi, sehingga budayanya beragam.
           </p>
         </div>
-      </div>
 
-      <!-- Screenshot Aplikasi (Multi-screen Horizontal Gallery) -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        
-        <!-- Screenshot Screen 1 -->
-        <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col gap-3">
-          <p class="text-xs font-extrabold text-slate-800 text-center border-b pb-2">Rekomendasi Destinasi</p>
-          <div class="h-44 bg-slate-100 rounded-2xl overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=500&q=80" alt="Destinasi" class="w-full h-full object-cover">
-            <span class="absolute bottom-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">Hidden Gems</span>
-          </div>
-          <p class="text-xs font-bold text-slate-800">Pulau Pahawang & Kelagian</p>
-          <p class="text-[11px] text-slate-500 leading-relaxed">Rekomendasi cerdas berbasis AI untuk aktivitas wisata bahari.</p>
-        </div>
+        <!-- Kolom kanan: kategori -->
+        <div class="lg:col-span-5">
 
-        <!-- Screenshot Screen 2 -->
-        <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col gap-3">
-          <p class="text-xs font-extrabold text-slate-800 text-center border-b pb-2">Itinerary Planning Agent</p>
-          <div class="h-44 bg-teal-50 p-4 rounded-2xl border border-teal-100 flex flex-col justify-center gap-4">
-            <div class="flex justify-between text-[11px]">
-              <span class="text-teal-900">Hari 1: Dermaga Ketapang</span>
-              <span class="text-teal-600 font-bold">08:00 WIB</span>
-            </div>
-            <div class="flex justify-between text-[11px]">
-              <span class="text-teal-900">Hari 1: Snorkeling Spot Nemo</span>
-              <span class="text-teal-600 font-bold">10:30 WIB</span>
-            </div>
+          <div class="divide-y divide-slate-200 border-y border-slate-200">
+          <a href="destinasi.html" class="group flex gap-4 py-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 rounded-lg">
+            <span class="flex-none w-11 h-11 rounded-full bg-teal-400 text-white flex items-center justify-center text-lg"><i class="fa-solid fa-water"></i></span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-base font-black text-slate-900 group-hover:text-blue-600 transition">Alam dan Bahari</span>
+              <span class="block mt-1 text-sm text-slate-600 leading-relaxed">Pulau dan teluk di Pesawaran dan Tanggamus, ombak Krui, Taman Nasional Way Kambas, hingga Gunung Anak Krakatau.</span>
+            </span>
+            <i class="fa-solid fa-arrow-right self-center text-xs text-slate-300 group-hover:text-blue-600 group-hover:translate-x-1 transition"></i>
+          </a>
+          <a href="destinasi.html?cat=budaya" class="group flex gap-4 py-5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 rounded-lg">
+            <span class="flex-none w-11 h-11 rounded-full bg-amber-400 text-white flex items-center justify-center text-lg"><i class="fa-solid fa-landmark"></i></span>
+            <span class="min-w-0 flex-1">
+              <span class="block text-base font-black text-slate-900 group-hover:text-blue-600 transition">Budaya dan Tradisi</span>
+              <span class="block mt-1 text-sm text-slate-600 leading-relaxed">Kain tapis, aksara Lampung, dan siger, mahkota adat yang menjadi lambang daerah.</span>
+            </span>
+            <i class="fa-solid fa-arrow-right self-center text-xs text-slate-300 group-hover:text-blue-600 group-hover:translate-x-1 transition"></i>
+          </a>
           </div>
-          <p class="text-xs font-bold text-slate-800">Penyusunan Rencana Otomatis</p>
-          <p class="text-[11px] text-slate-500 leading-relaxed">Menyusun urutan rencana perjalanan secara efisien dan otomatis.</p>
-        </div>
-
-        <!-- Screenshot Screen 3 -->
-        <div class="bg-white p-4 rounded-3xl border border-slate-200/80 shadow-sm flex flex-col gap-3">
-          <p class="text-xs font-extrabold text-slate-800 text-center border-b pb-2">Crowd Prediction Agent</p>
-          <div class="h-44 bg-amber-50 p-3 rounded-2xl border border-amber-100 text-center flex flex-col items-center justify-center">
-            <i class="fa-solid fa-users text-amber-600 text-2xl mb-2"></i>
-            <p class="text-xs font-extrabold text-amber-900">Prediksi Kepadatan: Rendah</p>
-            <p class="text-[10px] text-amber-700 mt-1">Waktu terbaik kunjungan: 09:00 - 11:00 WIB</p>
-          </div>
-          <p class="text-xs font-bold text-slate-800">Data Kunjungan Real-time</p>
-          <p class="text-[11px] text-slate-500 leading-relaxed">Memprediksi kepadatan pengunjung agar perjalanan lebih nyaman.</p>
         </div>
 
       </div>
@@ -320,131 +195,230 @@
   <!-- ================= 4. PENJELASAN FITUR ================= -->
   <section id="fitur" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-xs font-black uppercase tracking-widest text-blue-600 mb-2">Agen AI Cerdas</h2>
         <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Penjelasan Fitur</h3>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        
+
         <!-- Kotak 1 Fitur Rekomendasi -->
-        <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center sm:text-left flex flex-col justify-between">
+        <a href="destinasi.html"
+          class="block bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition text-center sm:text-left flex flex-col justify-between focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
           <div>
-            <div class="w-12 h-12 bg-amber-500 text-white rounded-full flex items-center justify-center text-xl mb-6 mx-auto sm:mx-0 shadow-md shadow-amber-500/20">
+            <div
+              class="w-12 h-12 bg-amber-500 text-white rounded-full flex items-center justify-center text-xl mb-6 mx-auto sm:mx-0 shadow-md shadow-amber-500/20">
               <i class="fa-solid fa-compass"></i>
             </div>
             <h4 class="text-lg font-black text-slate-900 mb-3">
-              1. Rekomendasi Destinasi Wisata Cerdas <span class="text-xs text-blue-600 font-semibold block sm:inline">(Aplikasi Mobile)</span>
+              1. Rekomendasi Destinasi Wisata Cerdas <span
+                class="text-xs text-blue-600 font-semibold block sm:inline">(Aplikasi Mobile)</span>
             </h4>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Membantu wisatawan mendapatkan rekomendasi destinasi wisata yang relevan dan sesuai preferensi melalui dukungan <b>Destination Recommendation Agent</b>.
+              Membantu wisatawan mendapatkan rekomendasi destinasi wisata yang relevan dan sesuai preferensi.
             </p>
           </div>
-        </div>
+        </a>
 
         <!-- Kotak 2 Fitur Itinerary -->
-        <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center sm:text-left flex flex-col justify-between">
+        <a href="fitur.html#itinerary"
+          class="block bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition text-center sm:text-left flex flex-col justify-between focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
           <div>
-            <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl mb-6 mx-auto sm:mx-0 shadow-md shadow-blue-500/20">
+            <div
+              class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl mb-6 mx-auto sm:mx-0 shadow-md shadow-blue-500/20">
               <i class="fa-solid fa-route"></i>
             </div>
             <h4 class="text-lg font-black text-slate-900 mb-3">
-              2. Penyusunan Itinerary Cerdas <span class="text-xs text-blue-600 font-semibold block sm:inline">(Aplikasi Mobile)</span>
+              2. Penyusunan Itinerary Cerdas <span class="text-xs text-blue-600 font-semibold block sm:inline">(Aplikasi
+                Mobile)</span>
             </h4>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Membantu wisatawan menyusun dan mengoptimalkan urutan rencana perjalanan (itinerary) secara efisien melalui dukungan <b>Itinerary Planning Agent</b>.
+              Membantu wisatawan menyusun dan mengoptimalkan urutan rencana perjalanan (itinerary) secara efisien.
             </p>
           </div>
-        </div>
+        </a>
 
         <!-- Kotak 3 Fitur Prediksi Kepadatan -->
-        <div class="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition text-center sm:text-left flex flex-col justify-between">
+        <a href="fitur.html#prediksi"
+          class="block bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md hover:-translate-y-1 transition text-center sm:text-left flex flex-col justify-between focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
           <div>
-            <div class="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl mb-6 mx-auto sm:mx-0 shadow-md shadow-slate-900/20">
+            <div
+              class="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center text-xl mb-6 mx-auto sm:mx-0 shadow-md shadow-slate-900/20">
               <i class="fa-solid fa-chart-line"></i>
             </div>
             <h4 class="text-lg font-black text-slate-900 mb-3">
               3. Prediksi Kepadatan Wisata
             </h4>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Memanfaatkan <b>Crowd Prediction Agent</b> yang terintegrasi langsung dengan data kunjungan dari aplikasi web untuk memprediksi tingkat kepadatan pengunjung di suatu destinasi, sehingga wisatawan dapat merencanakan perjalanan dengan lebih nyaman.
+              Terintegrasi langsung dengan data kunjungan dari aplikasi
+              web untuk memprediksi tingkat kepadatan pengunjung di suatu destinasi, sehingga wisatawan dapat
+              merencanakan perjalanan dengan lebih nyaman.
             </p>
           </div>
-        </div>
+        </a>
 
       </div>
 
+
+      <!-- Carousel tampilan aplikasi: slide aktif di depan, sisanya di belakang, berganti otomatis -->
+      <div class="mt-20">
+        <div class="text-center mb-10">
+          <h2 class="text-xs font-black uppercase tracking-widest text-blue-600 mb-2">Tampilan Aplikasi</h2>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Sekilas Tampilan SmartTrip</h3>
+        </div>
+
+        <div id="app-carousel" class="relative h-[560px] sm:h-[640px] overflow-hidden select-none" role="region" aria-roledescription="carousel" aria-label="Tampilan aplikasi SmartTrip">
+          <div class="pc-item absolute left-1/2 top-1/2 w-[220px] sm:w-[272px] transition-all duration-500 ease-out">
+            <div class="iphone16 iphone16--main">
+              <span class="iphone16__action"></span>
+              <span class="iphone16__camctl"></span>
+              <div class="iphone16__screen relative">
+                <div class="iphone16__island"></div><div class="iphone16__status"><span>9:41</span><span class="iphone16__status-icons"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></span></div>
+                <img class="absolute inset-0 w-full h-full object-cover object-top" src="assets/images/splashscreen.png" alt="Splash screen SmartTrip" loading="lazy" onerror="this.remove()">
+              </div>
+            </div>
+          </div>
+          <div class="pc-item absolute left-1/2 top-1/2 w-[220px] sm:w-[272px] transition-all duration-500 ease-out">
+            <div class="iphone16 iphone16--main">
+              <span class="iphone16__action"></span>
+              <span class="iphone16__camctl"></span>
+              <div class="iphone16__screen relative">
+                <div class="iphone16__island"></div><div class="iphone16__status"><span>9:41</span><span class="iphone16__status-icons"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></span></div>
+                <img class="absolute inset-0 w-full h-full object-cover object-top" src="assets/images/Home.png" alt="Beranda SmartTrip" loading="lazy" onerror="this.remove()">
+              </div>
+            </div>
+          </div>
+          <div class="pc-item absolute left-1/2 top-1/2 w-[220px] sm:w-[272px] transition-all duration-500 ease-out">
+            <div class="iphone16 iphone16--main">
+              <span class="iphone16__action"></span>
+              <span class="iphone16__camctl"></span>
+              <div class="iphone16__screen relative">
+                <div class="iphone16__island"></div><div class="iphone16__status"><span>9:41</span><span class="iphone16__status-icons"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></span></div>
+                <img class="absolute inset-0 w-full h-full object-cover object-top" src="assets/images/Frame-1.png" alt="Rekomendasi destinasi SmartTrip" loading="lazy" onerror="this.remove()">
+              </div>
+            </div>
+          </div>
+          <div class="pc-item absolute left-1/2 top-1/2 w-[220px] sm:w-[272px] transition-all duration-500 ease-out">
+            <div class="iphone16 iphone16--main">
+              <span class="iphone16__action"></span>
+              <span class="iphone16__camctl"></span>
+              <div class="iphone16__screen relative">
+                <div class="iphone16__island"></div><div class="iphone16__status"><span>9:41</span><span class="iphone16__status-icons"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></span></div>
+                <img class="absolute inset-0 w-full h-full object-cover object-top" src="assets/images/itinerary%20.png" alt="Itinerary SmartTrip" loading="lazy" onerror="this.remove()">
+              </div>
+            </div>
+          </div>
+          <div class="pc-item absolute left-1/2 top-1/2 w-[220px] sm:w-[272px] transition-all duration-500 ease-out">
+            <div class="iphone16 iphone16--main">
+              <span class="iphone16__action"></span>
+              <span class="iphone16__camctl"></span>
+              <div class="iphone16__screen relative">
+                <div class="iphone16__island"></div><div class="iphone16__status"><span>9:41</span><span class="iphone16__status-icons"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></span></div>
+                <img class="absolute inset-0 w-full h-full object-cover object-top" src="assets/images/Trip.png" alt="Peta perjalanan SmartTrip" loading="lazy" onerror="this.remove()">
+              </div>
+            </div>
+          </div>
+          <div class="pc-item absolute left-1/2 top-1/2 w-[220px] sm:w-[272px] transition-all duration-500 ease-out">
+            <div class="iphone16 iphone16--main">
+              <span class="iphone16__action"></span>
+              <span class="iphone16__camctl"></span>
+              <div class="iphone16__screen relative">
+                <div class="iphone16__island"></div><div class="iphone16__status"><span>9:41</span><span class="iphone16__status-icons"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></span></div>
+                <img class="absolute inset-0 w-full h-full object-cover object-top" src="assets/images/draft_itinerary.png" alt="Draft itinerary SmartTrip" loading="lazy" onerror="this.remove()">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center justify-center gap-4">
+          <button id="ac-prev" type="button" aria-label="Tampilan sebelumnya" class="w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-700 hover:text-blue-600 transition flex items-center justify-center"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+          <div id="ac-dots" class="flex items-center gap-2"></div>
+          <button id="ac-next" type="button" aria-label="Tampilan berikutnya" class="w-10 h-10 rounded-full bg-white border border-slate-200 text-slate-700 hover:text-blue-600 transition flex items-center justify-center"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var root = document.getElementById('app-carousel');
+          if (!root) return;
+          var items = Array.prototype.slice.call(root.querySelectorAll('.pc-item'));
+          var n = items.length;
+          var dotsEl = document.getElementById('ac-dots');
+          var cur = 0, timer = null;
+
+          items.forEach(function (_, i) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.setAttribute('aria-label', 'Tampilan ' + (i + 1));
+            b.addEventListener('click', function () { go(i); });
+            dotsEl.appendChild(b);
+          });
+
+          function render() {
+            items.forEach(function (el, i) {
+              var d = ((i - cur) % n + n) % n;
+              if (d > n / 2) d -= n;
+              var ad = Math.abs(d), x = 0, sc = 1, op = 1, z = 30;
+              if (ad === 1) { x = d * 95; sc = 0.82; op = 0.55; z = 20; }
+              else if (ad === 2) { x = d * 90; sc = 0.68; op = 0.45; z = 10; }
+              else if (ad > 2) { x = d * 130; sc = 0.6; op = 0; z = 0; }
+              el.style.transform = 'translate(-50%,-50%) translateX(' + x + '%) scale(' + sc + ')';
+              el.style.opacity = op;
+              el.style.zIndex = z;
+              el.setAttribute('aria-hidden', String(ad !== 0));
+            });
+            dotsEl.querySelectorAll('button').forEach(function (b, i) {
+              b.className = 'h-2 rounded-full transition-all ' + (i === cur ? 'w-6 bg-blue-600' : 'w-2 bg-slate-300 hover:bg-slate-400');
+            });
+          }
+
+          function start() { stop(); timer = setInterval(function () { go(cur + 1); }, 2500); }
+          function stop() { if (timer) clearInterval(timer); timer = null; }
+          function go(i) { cur = ((i % n) + n) % n; render(); start(); }
+
+          document.getElementById('ac-prev').addEventListener('click', function () { go(cur - 1); });
+          document.getElementById('ac-next').addEventListener('click', function () { go(cur + 1); });
+          root.addEventListener('mouseenter', stop);
+          root.addEventListener('mouseleave', start);
+
+          render();
+          start();
+        })();
+      </script>
     </div>
   </section>
 
   <!-- ================= 5. UNDUH APP (KATA-KATA + QR CODE) ================= -->
-  <section id="unduh" class="py-16 bg-gradient-to-r from-blue-600 via-teal-500 to-emerald-500 text-white">
+  <section id="unduh" class="py-16 bg-blue-500 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        
+
         <!-- Sebelah Kiri: Kata-kata -->
         <div class="space-y-4 text-center lg:text-left">
-          <span class="text-xs font-extrabold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full">UNDUH APLIKASI</span>
-          
+          <span
+            class="text-xs font-extrabold uppercase tracking-widest bg-white/20 text-white px-3 py-1 rounded-full">UNDUH
+            APLIKASI</span>
+
           <h2 class="text-3xl sm:text-5xl font-black leading-tight">
             "Satu aplikasi untuk semua petualanganmu. Yuk, install sekarang!"
           </h2>
 
           <p class="text-sm text-white/90 leading-relaxed max-w-md mx-auto lg:mx-0">
-            Dapatkan pengalaman kemudahan merencanakan liburan di Lampung lengkap dengan rekomendasi AI dan tiket digital.
+            Aplikasi SmartTrip masih dalam tahap demo. Unduh langsung dengan memindai QR code menggunakan kamera HP kamu.
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-            <a href="#" class="px-6 py-3.5 bg-slate-900 text-white font-bold rounded-2xl shadow-xl hover:bg-slate-800 transition flex items-center gap-3 justify-center">
-              <i class="fa-brands fa-google-play text-xl text-teal-400"></i>
-              <span class="text-xs">Google Play Store</span>
-            </a>
-            <a href="#" class="px-6 py-3.5 bg-white text-slate-900 font-bold rounded-2xl shadow-xl hover:bg-slate-100 transition flex items-center gap-3 justify-center">
-              <i class="fa-brands fa-apple text-xl"></i>
-              <span class="text-xs">Apple App Store</span>
-            </a>
-          </div>
-        </div>
+                  </div>
 
         <!-- Sebelah Kanan: Handphone dengan QR Code (frame iPhone 16) -->
         <div class="flex justify-center">
           <div class="iphone16 iphone16--main">
             <span class="iphone16__action"></span>
             <span class="iphone16__camctl"></span>
-            <div class="iphone16__screen">
+            <div class="iphone16__screen relative">
               <div class="iphone16__island"></div>
-              <div class="iphone16__status">
-                <span>9:41</span>
-                <span class="iphone16__status-icons">
-                  <i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i>
-                </span>
-              </div>
-
-              <div class="i16-ui">
-                <div class="i16-center">
-                  <p class="i16-heading">Scan QR Code App</p>
-                  <p class="i16-desc">Pindai kode untuk mengunduh aplikasi SmartTrip secara langsung ke handphone kamu!</p>
-                </div>
-
-                <!-- QR Code SVG -->
-                <div class="i16-qr">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M2,2H10V10H2V2M4,4V8H8V4H4M11,2H13V4H11V2M14,2H22V10H14V2M16,4V8H20V4H16M2,14H10V22H2V14M4,16V20H8V16H4M11,6H13V8H11V6M11,10H13V12H11V10M11,14H13V16H11V14M11,18H13V20H11V18M14,11H16V13H14V11M17,11H19V13H17V11M20,11H22V13H20V11M14,14H16V16H14V14M17,14H19V16H17V14M20,14H22V16H20V14M14,17H16V19H14V17M17,17H19V19H17V17M20,17H22V19H20V17M14,20H16V22H14V20M17,20H19V22H17V20M20,20H22V22H20V20Z"/>
-                  </svg>
-                </div>
-
-                <p class="i16-brand">SmartTrip Lampung App</p>
-
-                <nav class="i16-tabbar">
-                  <i class="fa-solid fa-house"></i>
-                  <i class="fa-solid fa-compass"></i>
-                  <i class="fa-solid fa-qrcode is-active"></i>
-                </nav>
-              </div>
-
-              <div class="iphone16__home"></div>
+              <div class="iphone16__status"><span>9:41</span><span class="iphone16__status-icons"><i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i></span></div>
+              <img class="absolute inset-0 w-full h-full object-cover object-top" src="assets/images/Scan_unduh.png" alt="QR code unduh aplikasi SmartTrip" loading="lazy">
             </div>
           </div>
         </div>
@@ -454,205 +428,132 @@
     </div>
   </section>
 
-  <!-- ================= 6. ULASAN ================= -->
-  <section id="ulasan" class="py-20 bg-slate-50">
+  <!-- ================= 6. FEEDBACK APLIKASI ================= -->
+  <section id="ulasan" class="py-16 md:py-20 bg-white scroll-mt-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-xs font-black uppercase tracking-widest text-blue-600 mb-2">Pengalaman Wisatawan</h2>
-        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Ulasan Aplikasi</h3>
-      </div>
+      <div class="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-sky-50 via-blue-50 to-white border border-blue-100 p-6 sm:p-10 lg:p-14">
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Sebelah Kiri: Gambar Handphone Aplikasi Kita (frame iPhone 16) -->
-        <div class="lg:col-span-5 flex justify-center">
-          <div class="iphone16 iphone16--main">
-            <span class="iphone16__action"></span>
-            <span class="iphone16__camctl"></span>
-            <div class="iphone16__screen">
-              <div class="iphone16__island"></div>
-              <div class="iphone16__status">
-                <span>9:41</span>
-                <span class="iphone16__status-icons">
-                  <i class="fa-solid fa-signal"></i><i class="fa-solid fa-wifi"></i><i class="fa-solid fa-battery-full"></i>
-                </span>
-              </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
-              <div class="i16-ui">
-                <div class="i16-head">
-                  <p class="i16-eyebrow">Aplikasi SmartTrip</p>
-                  <p class="i16-rating">Rating 4.9 <span>★★★★★</span></p>
-                </div>
+          <!-- Penjelasan -->
+          <div class="lg:col-span-5">
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">Bantu kami memperbaiki SmartTrip</h2>
+            <p class="mt-5 text-sm sm:text-base text-slate-600 leading-relaxed max-w-md">
+              Ceritakan pengalamanmu memakai aplikasi. Masukanmu dipakai untuk memperbaiki rekomendasi destinasi, itinerary, dan prediksi kepadatan.
+            </p>
 
-                <div class="i16-card">
-                  <p class="i16-card__title">Ulasan Pengguna Terbaru</p>
-                  <p class="i16-text">"Sangat membantu pas liburan ke Lampung! Fitur itinerary-nya bikin pas jam perjalanan."</p>
-                </div>
-
-                <div class="i16-reviews">
-                  <div class="i16-card">
-                    <div class="i16-person">
-                      <span class="i16-avatar i16-avatar--blue">AP</span>
-                      <div>
-                        <p class="i16-person__name">Andi Pratama</p>
-                        <p class="i16-person__stars">★★★★★</p>
-                      </div>
-                    </div>
-                    <p class="i16-text" style="margin-top:0">"Fitur prediksi kepadatannya akurat, jadi nggak perlu desak-desakan!"</p>
-                  </div>
-                  <div class="i16-card">
-                    <div class="i16-person">
-                      <span class="i16-avatar i16-avatar--teal">SN</span>
-                      <div>
-                        <p class="i16-person__name">Siti Nurhaliza</p>
-                        <p class="i16-person__stars">★★★★★</p>
-                      </div>
-                    </div>
-                    <p class="i16-text" style="margin-top:0">"Fitur penyusunan itinerary cerdasnya juara!"</p>
-                  </div>
-                  <div class="i16-card">
-                    <div class="i16-person">
-                      <span class="i16-avatar i16-avatar--green">R</span>
-                      <div>
-                        <p class="i16-person__name">Rian Hidayat</p>
-                        <p class="i16-person__stars">★★★★★</p>
-                      </div>
-                    </div>
-                    <p class="i16-text" style="margin-top:0">"Banyak rekomendasi wisata dan kuliner khas Lampung yang belum saya tahu."</p>
-                  </div>
-                </div>
-
-                <div class="i16-cta">
-                  <p class="i16-cta__title">2,400+ Download</p>
-                  <p class="i16-cta__sub">Wisatawan Aktif di Lampung</p>
-                </div>
-
-                <nav class="i16-tabbar">
-                  <i class="fa-solid fa-house is-active"></i>
-                  <i class="fa-solid fa-compass"></i>
-                  <i class="fa-solid fa-qrcode"></i>
-                </nav>
-              </div>
-
-              <div class="iphone16__home"></div>
+            <div class="mt-8 flex items-start gap-4 bg-white rounded-2xl border border-slate-200 px-6 py-5 shadow-sm">
+              <span class="flex-none w-11 h-11 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm shadow-md shadow-blue-500/20"><i class="fa-solid fa-envelope"></i></span>
+              <p class="text-sm text-slate-600 leading-relaxed">Form ini membuka aplikasi email kamu dan mengirim masukan ke <span class="font-bold text-slate-900">info@smarttrip.dev</span>.</p>
             </div>
+          </div>
+
+          <!-- Form -->
+          <div class="lg:col-span-7">
+            <form action="mailto:info@smarttrip.dev" method="post" enctype="text/plain" class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for="fb-nama" class="block text-sm font-bold text-slate-900">Nama <span class="text-red-500">*</span></label>
+            <input id="fb-nama" name="Nama" type="text" required class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
+          </div>
+          <div>
+            <label for="fb-email" class="block text-sm font-bold text-slate-900">Email <span class="text-xs font-normal text-slate-500">(opsional)</span></label>
+            <input id="fb-email" name="Email" type="email" class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
           </div>
         </div>
 
-        <!-- Sebelah Kanan: Daftar Ulasan Aplikasi -->
-        <div class="lg:col-span-7 space-y-4">
-          
-          <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm space-y-2">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full bg-blue-100 text-blue-600 font-black flex items-center justify-center text-xs">
-                  AR
-                </div>
-                <div>
-                  <h5 class="text-xs font-extrabold text-slate-900">Andi Pratama</h5>
-                  <p class="text-[10px] text-slate-400">Wisatawan asal Jakarta</p>
-                </div>
-              </div>
-              <div class="text-amber-400 text-xs">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-            </div>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              "SmartTrip beneran ngebantu banget pas saya sekeluarga mau eksplor Pahawang dan Kiluan. Fitur prediksi kepadatannya akurat, jadi nggak perlu desak-desakan!"
-            </p>
-          </div>
+        <div>
+          <label for="fb-kategori" class="block text-sm font-bold text-slate-900">Topik masukan <span class="text-red-500">*</span></label>
+          <select id="fb-kategori" name="Topik" required class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600">
+            <option value="">Pilih topik</option>
+            <option>Rekomendasi destinasi</option>
+            <option>Itinerary</option>
+            <option>Prediksi kepadatan</option>
+            <option>Tampilan aplikasi</option>
+            <option>Lainnya</option>
+          </select>
+        </div>
 
-          <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm space-y-2">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full bg-teal-100 text-teal-600 font-black flex items-center justify-center text-xs">
-                  SN
-                </div>
-                <div>
-                  <h5 class="text-xs font-extrabold text-slate-900">Siti Nurhaliza</h5>
-                  <p class="text-[10px] text-slate-400">Mahasiswi & Solo Traveler</p>
-                </div>
-              </div>
-              <div class="text-amber-400 text-xs">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-            </div>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              "Fitur penyusunan itinerary cerdasnya juara! Tinggal pilih preferensi kuliner dan pantai, aplikasi langsung buatkan jadwal lengkap jam per jam."
-            </p>
+        <fieldset>
+          <legend class="block text-sm font-bold text-slate-900">Seberapa puas kamu dengan aplikasi? <span class="text-red-500">*</span></legend>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <label class="cursor-pointer">
+              <input type="radio" name="Penilaian" value="1" required class="peer sr-only">
+              <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-300 text-sm font-bold text-slate-600 peer-checked:bg-blue-600 peer-checked:border-blue-600 peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-600">1</span>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="Penilaian" value="2" class="peer sr-only">
+              <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-300 text-sm font-bold text-slate-600 peer-checked:bg-blue-600 peer-checked:border-blue-600 peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-600">2</span>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="Penilaian" value="3" class="peer sr-only">
+              <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-300 text-sm font-bold text-slate-600 peer-checked:bg-blue-600 peer-checked:border-blue-600 peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-600">3</span>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="Penilaian" value="4" class="peer sr-only">
+              <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-300 text-sm font-bold text-slate-600 peer-checked:bg-blue-600 peer-checked:border-blue-600 peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-600">4</span>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="Penilaian" value="5" class="peer sr-only">
+              <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-300 text-sm font-bold text-slate-600 peer-checked:bg-blue-600 peer-checked:border-blue-600 peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-600">5</span>
+            </label>
           </div>
+        </fieldset>
 
-          <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm space-y-2">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-600 font-black flex items-center justify-center text-xs">
-                  R
-                </div>
-                <div>
-                  <h5 class="text-xs font-extrabold text-slate-900">Rian Hidayat</h5>
-                  <p class="text-[10px] text-slate-400">Pencari Hidden Gems</p>
-                </div>
-              </div>
-              <div class="text-amber-400 text-xs">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-            </div>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              "Dapat banyak rekomendasi tempat wisata dan kuliner khas Lampung yang belum pernah saya tahu sebelumnya. Aplikasi wajib buat yang mau ke Lampung!"
-            </p>
+        <div>
+          <label for="fb-pesan" class="block text-sm font-bold text-slate-900">Masukan atau saran <span class="text-red-500">*</span></label>
+          <textarea id="fb-pesan" name="Pesan" rows="5" required class="mt-2 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600" placeholder="Apa yang sudah bagus, dan apa yang perlu diperbaiki?"></textarea>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
+          <p class="text-xs text-slate-500">Form ini akan membuka email ke info@smarttrip.dev.</p>
+          <button type="submit" class="inline-flex justify-center px-6 py-3 rounded-full bg-blue-600 text-white text-sm font-bold hover:bg-blue-700 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">Kirim feedback</button>
+        </div>
+
+      </form>
           </div>
 
         </div>
-
       </div>
-
     </div>
   </section>
 
   <!-- ================= 7. KONTAK & FOOTER ================= -->
-  <footer id="kontak" class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-        
-        <!-- Brand Info -->
-        <div class="md:col-span-6 space-y-4">
-          <div class="flex items-center gap-2.5">
-            <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-sm">
-              <i class="fa-solid fa-compass"></i>
-            </div>
-            <span class="text-xl font-black text-white">SmartTrip</span>
-          </div>
-          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
-            Panduan perjalanan digital serba ada yang dirancang khusus untuk menemani setiap petualangan Anda di Bandar Lampung dan sekitarnya.
-          </p>
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+        <a href="index.html" class="inline-flex w-fit items-center rounded-xl bg-white px-3 py-2 shadow-sm">
+          <img src="assets/images/logo.png" alt="SmartTrip" class="h-10 w-auto">
+        </a>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-bold text-slate-300">
+          <a href="index.html" class="hover:text-white transition">Beranda</a>
+          <a href="destinasi.html" class="hover:text-white transition">Rekomendasi</a>
+          <a href="fitur.html" class="hover:text-white transition">Fitur</a>
+          <a href="pjbl.html" class="hover:text-white transition">Info PjBL</a>
+          <a href="kontak.html#kontak" class="hover:text-white transition">Kontak</a>
+          <a href="unduh.html" class="hover:text-white transition">Unduh App</a>
         </div>
-
-        <!-- Detail Kontak Resmi -->
-        <div class="md:col-span-6 space-y-3 md:text-right">
-          <h4 class="text-sm font-extrabold text-white uppercase tracking-wider mb-2">Kontak Kami</h4>
-          <p class="text-xs text-slate-300">
-            Instagram Resmi: 
-            <a href="https://instagram.com/smarttrip_dev" target="_blank" class="text-teal-400 font-bold hover:underline ml-1">
-              <i class="fa-brands fa-instagram mr-1"></i>@smarttrip_dev
-            </a>
-          </p>
-          <p class="text-xs text-slate-400">
-            Email: info@smarttrip.dev | Bandar Lampung, Indonesia
-          </p>
-        </div>
-
       </div>
-
+      <div class="mb-8 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6 text-xs text-slate-300">
+        <a href="https://instagram.com/smarttrip_dev" target="_blank" rel="noopener" class="hover:text-white transition inline-flex items-center gap-2">
+          <i class="fa-brands fa-instagram"></i>@smarttrip_dev
+        </a>
+        <a href="mailto:info@smarttrip.dev" class="hover:text-white transition inline-flex items-center gap-2">
+          <i class="fa-solid fa-envelope"></i>info@smarttrip.dev
+        </a>
+        <span class="inline-flex items-center gap-2">
+          <i class="fa-solid fa-location-dot"></i>Bandar Lampung, Indonesia
+        </span>
+      </div>
       <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
         &copy; 2026 SmartTrip. All rights reserved. Platform Pariwisata Cerdas Lampung.
       </div>
-
     </div>
   </footer>
 
   <!-- File Custom JS -->
   <script src="script.js"></script>
 </body>
+
 </html>

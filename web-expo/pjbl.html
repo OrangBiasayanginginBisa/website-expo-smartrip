@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info PjBL - SmartTrip</title>
+  <meta name="description" content="Informasi proyek SmartTrip, platform multi-agent AI untuk itinerary cerdas dan pemerataan destinasi wisata di Provinsi Lampung, beserta dosen pembimbing dan tim.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Link Custom CSS Eksternal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+  <!-- ================= NAVBAR (sama di semua halaman) ================= -->
+  <header id="site-nav" class="site-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+
+        <!-- Logo SmartTrip -->
+        <a href="index.html" class="flex items-center">
+          <img src="assets/images/logo.png" alt="SmartTrip - Rencanakan perjalananmu dengan lebih cerdas"
+            class="h-12 sm:h-14 w-auto">
+        </a>
+
+        <!-- Menu Desktop -->
+        <nav class="hidden lg:flex items-center h-full text-sm font-bold text-slate-600" aria-label="Menu utama">
+          <a href="index.html" class="nav-link">Beranda</a>
+          <a href="destinasi.html" class="nav-link">Rekomendasi</a>
+          <a href="fitur.html" class="nav-link">Fitur</a>
+          <a href="pjbl.html" class="nav-link is-active" aria-current="page">Info PjBL</a>
+          <a href="ulasan.html" class="nav-link">Ulasan</a>
+          <a href="kontak.html#kontak" class="nav-link">Kontak</a>
+        </nav>
+
+        <!-- Tombol CTA Nav -->
+        <div class="hidden lg:flex items-center">
+          <a href="unduh.html" class="nav-cta">Unduh App</a>
+        </div>
+
+        <!-- Hamburger (mobile & tablet) -->
+        <div class="lg:hidden flex items-center">
+          <button id="menu-btn" type="button" class="menu-btn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Menu Mobile (membuka dengan transisi tinggi) -->
+    <div id="mobile-menu" class="mobile-panel lg:hidden">
+      <div class="mobile-inner">
+        <a href="index.html" class="m-link">Beranda</a>
+        <a href="destinasi.html" class="m-link">Rekomendasi</a>
+        <a href="fitur.html" class="m-link">Fitur</a>
+        <a href="pjbl.html" class="m-link is-active" aria-current="page">Info PjBL</a>
+        <a href="ulasan.html" class="m-link">Ulasan</a>
+        <a href="kontak.html#kontak" class="m-link">Kontak</a>
+        <a href="unduh.html" class="nav-cta m-cta">Unduh App</a>
+      </div>
+    </div>
+
+    <div class="nav-progress" aria-hidden="true"></div>
+  </header>
+
+  <header class="bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div class="max-w-2xl">
+        <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">Info PjBL</h1>
+        <p class="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">Informasi proyek SmartTrip dan tim di baliknya.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-10 md:py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+      <!-- Identitas proyek -->
+      <section>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">SmartTrip</h2>
+
+        <p class="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl">
+          SmartTrip adalah platform multi-agent AI untuk penyusunan itinerary cerdas dan pemerataan destinasi wisata
+          di Provinsi Lampung. Tiga agen AI bekerja bersama: merekomendasikan destinasi sesuai preferensi, menyusun
+          urutan perjalanan yang efisien, dan memprediksi tingkat kepadatan wisata.
+        </p>
+
+        <div class="mt-8 flex items-center gap-4">
+          <div class="relative flex-none w-24 h-24 rounded-full overflow-hidden bg-slate-100">
+            <span class="absolute inset-0 flex items-center justify-center text-xl font-black text-slate-300">K</span>
+            <!-- Foto: assets/images/tim/dosen-pembimbing.jpg -->
+            <img src="assets/images/Khusnatul Amaliah, S.Kom., M.Kom..jpg" alt="Foto Khusnatul Amaliah, S.Kom., M.Kom." loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top" onerror="this.remove()">
+          </div>
+          <div class="min-w-0">
+            <p class="text-xs font-bold text-slate-500">Dosen pembimbing</p>
+            <p class="mt-1 font-bold text-slate-900">Khusnatul Amaliah, S.Kom., M.Kom.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tim -->
+      <section>
+        <h2 class="text-xl font-extrabold text-slate-900">Tim</h2>
+        <ul class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">V</span>
+              <img src="assets/images/Vina%20Rahmadani.jpg" alt="Foto Vina Rahmadani" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Vina Rahmadani</p>
+              <p class="text-xs text-slate-500 mt-1">Project Manager</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">B</span>
+              <img src="assets/images/Bulan%20Oka%20Nazara.png" alt="Foto Bulan Oka Nazara" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Bulan Oka Nazara</p>
+              <p class="text-xs text-slate-500 mt-1">UI/UX Designer</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">R</span>
+              <img src="assets/images/Rizki%20Arta%20Safitri.png" alt="Foto Rizki Arta Safitri" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Rizki Arta Safitri</p>
+              <p class="text-xs text-slate-500 mt-1">Frontend Developer</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">M</span>
+              <img src="assets/images/Muhammad%20Fahry%20Arief%20Billah.jpg" alt="Foto Muhammad Fahry Arief Billah" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Muhammad Fahry Arief Billah</p>
+              <p class="text-xs text-slate-500 mt-1">Backend Developer</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">D</span>
+              <img src="assets/images/Dinda%20Lovita.jpg" alt="Foto Dinda Lovita" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Dinda Lovita</p>
+              <p class="text-xs text-slate-500 mt-1">UX Designer</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">N</span>
+              
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Narenra</p>
+              <p class="text-xs text-slate-500 mt-1">UX Designer</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">M</span>
+              <img src="assets/images/Muhamad%20Hasan.jpg" alt="Foto Muhamad Hasan" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Muhamad Hasan</p>
+              <p class="text-xs text-slate-500 mt-1">UI Designer</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">T</span>
+              <img src="assets/images/Tya%20Apriliya.jpg" alt="Foto Tya Apriliya" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Tya Apriliya</p>
+              <p class="text-xs text-slate-500 mt-1">UI Designer</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">F</span>
+              
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Faris</p>
+              <p class="text-xs text-slate-500 mt-1">Frontend Developer</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">R</span>
+              <img src="assets/images/Rado%20Hidayatulloh.jpg" alt="Foto Rado Hidayatulloh" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Rado Hidayatulloh</p>
+              <p class="text-xs text-slate-500 mt-1">Backend Developer</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">A</span>
+              <img src="assets/images/Ajeng%20Jessica%20Yusrilaulah_.png" alt="Foto Ajeng Jessica Yusrilaulah" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Ajeng Jessica Yusrilaulah</p>
+              <p class="text-xs text-slate-500 mt-1">Analis</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">R</span>
+              <img src="assets/images/Reza%20Ali%20Sayidina.jpg" alt="Foto Reza Ali Sayidina" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Reza Ali Sayidina</p>
+              <p class="text-xs text-slate-500 mt-1">Analis</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">M</span>
+              <img src="assets/images/Muhammad%20fathul%20alam.jpg" alt="Foto Muhammad Fathul Alam" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Muhammad Fathul Alam</p>
+              <p class="text-xs text-slate-500 mt-1">Analis</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">A</span>
+              
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Atha</p>
+              <p class="text-xs text-slate-500 mt-1">Analis</p>
+            </div>
+          </li>
+          <li class="bg-white rounded-2xl border border-slate-200 overflow-hidden text-center">
+            <div class="relative aspect-square bg-slate-100">
+              <span class="absolute inset-0 flex items-center justify-center text-3xl font-black text-slate-300">S</span>
+              <img src="assets/images/Sheyra%20Amanda%20Eka%20Putri.png" alt="Foto Sheyra Amanda Eka Putri" loading="lazy" class="absolute inset-0 w-full h-full object-cover" onerror="this.remove()">
+            </div>
+            <div class="p-4">
+              <p class="text-sm font-extrabold text-slate-900">Sheyra Amanda Eka Putri</p>
+              <p class="text-xs text-slate-500 mt-1">Analis</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+        <a href="index.html" class="inline-flex w-fit items-center rounded-xl bg-white px-3 py-2 shadow-sm">
+          <img src="assets/images/logo.png" alt="SmartTrip" class="h-10 w-auto">
+        </a>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-bold text-slate-300">
+          <a href="index.html" class="hover:text-white transition">Beranda</a>
+          <a href="destinasi.html" class="hover:text-white transition">Rekomendasi</a>
+          <a href="fitur.html" class="hover:text-white transition">Fitur</a>
+          <a href="pjbl.html" class="hover:text-white transition">Info PjBL</a>
+          <a href="kontak.html#kontak" class="hover:text-white transition">Kontak</a>
+          <a href="unduh.html" class="hover:text-white transition">Unduh App</a>
+        </div>
+      </div>
+      <div class="mb-8 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6 text-xs text-slate-300">
+        <a href="https://instagram.com/smarttrip_dev" target="_blank" rel="noopener" class="hover:text-white transition inline-flex items-center gap-2">
+          <i class="fa-brands fa-instagram"></i>@smarttrip_dev
+        </a>
+        <a href="mailto:info@smarttrip.dev" class="hover:text-white transition inline-flex items-center gap-2">
+          <i class="fa-solid fa-envelope"></i>info@smarttrip.dev
+        </a>
+        <span class="inline-flex items-center gap-2">
+          <i class="fa-solid fa-location-dot"></i>Bandar Lampung, Indonesia
+        </span>
+      </div>
+      <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        &copy; 2026 SmartTrip. All rights reserved. Platform Pariwisata Cerdas Lampung.
+      </div>
+    </div>
+  </footer>
+
+  <!-- File Custom JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>

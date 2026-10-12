@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rekomendasi Tempat Wisata - SmartTrip</title>
+  <meta name="description" content="Pilihan tempat wisata di Lampung, dari pulau dan pantai sampai taman nasional dan ikon budaya.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- Link Custom CSS Eksternal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-600 selection:text-white">
+  <!-- ================= NAVBAR (sama di semua halaman) ================= -->
+  <header id="site-nav" class="site-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+
+        <!-- Logo SmartTrip -->
+        <a href="index.html" class="flex items-center">
+          <img src="assets/images/logo.png" alt="SmartTrip - Rencanakan perjalananmu dengan lebih cerdas"
+            class="h-12 sm:h-14 w-auto">
+        </a>
+
+        <!-- Menu Desktop -->
+        <nav class="hidden lg:flex items-center h-full text-sm font-bold text-slate-600" aria-label="Menu utama">
+          <a href="index.html" class="nav-link">Beranda</a>
+          <a href="destinasi.html" class="nav-link is-active" aria-current="page">Rekomendasi</a>
+          <a href="fitur.html" class="nav-link">Fitur</a>
+          <a href="pjbl.html" class="nav-link">Info PjBL</a>
+          <a href="ulasan.html" class="nav-link">Ulasan</a>
+          <a href="kontak.html#kontak" class="nav-link">Kontak</a>
+        </nav>
+
+        <!-- Tombol CTA Nav -->
+        <div class="hidden lg:flex items-center">
+          <a href="unduh.html" class="nav-cta">Unduh App</a>
+        </div>
+
+        <!-- Hamburger (mobile & tablet) -->
+        <div class="lg:hidden flex items-center">
+          <button id="menu-btn" type="button" class="menu-btn" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Menu Mobile (membuka dengan transisi tinggi) -->
+    <div id="mobile-menu" class="mobile-panel lg:hidden">
+      <div class="mobile-inner">
+        <a href="index.html" class="m-link">Beranda</a>
+        <a href="destinasi.html" class="m-link is-active" aria-current="page">Rekomendasi</a>
+        <a href="fitur.html" class="m-link">Fitur</a>
+        <a href="pjbl.html" class="m-link">Info PjBL</a>
+        <a href="ulasan.html" class="m-link">Ulasan</a>
+        <a href="kontak.html#kontak" class="m-link">Kontak</a>
+        <a href="unduh.html" class="nav-cta m-cta">Unduh App</a>
+      </div>
+    </div>
+
+    <div class="nav-progress" aria-hidden="true"></div>
+  </header>
+  <header class="bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div class="max-w-2xl">
+        <h1 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">Rekomendasi Tempat Wisata</h1>
+        <p class="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">Pilihan tempat wisata di Lampung, dari pulau dan pantai sampai taman nasional dan ikon budaya.</p>
+        <p class="mt-4 text-xs text-slate-500 max-w-xl"><i class="fa-solid fa-circle-info mr-1.5 text-slate-400"></i>Informasi umum sebagai inspirasi. Cek akses, jam buka, dan harga terbaru sebelum berangkat.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="py-10 md:py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="filter-bar flex flex-wrap gap-2" role="group" aria-label="Filter kategori">
+        <button type="button" class="chip is-active" data-filter="all" aria-pressed="true">Semua</button>
+        <button type="button" class="chip" data-filter="bahari" aria-pressed="false">Bahari</button>
+        <button type="button" class="chip" data-filter="alam" aria-pressed="false">Alam & Satwa</button>
+        <button type="button" class="chip" data-filter="budaya" aria-pressed="false">Ikon & Budaya</button>
+        <button type="button" class="chip" data-filter="kuliner" aria-pressed="false">Kuliner</button>
+      </div>
+
+      <div data-filter-grid class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/agrowisata_lampung_utara.jpg" alt="Agrowisata Lampung Utara" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Agrowisata Lampung Utara</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/agrowisata_tubaba.jpg" alt="Agrowisata Tubaba" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Agrowisata Tubaba</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/air_terjun_curup.jpg" alt="Air Terjun Curup" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Air Terjun Curup</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/air_terjun_way_kanan.jpg" alt="Air Terjun Way Kanan" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Air Terjun Way Kanan</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/anak_krakatau.jpg" alt="Anak Krakatau" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Anak Krakatau</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/angkringan_jemelik.jpg" alt="Angkringan Jemelik" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Angkringan Jemelik</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/angkringan_metro.jpg" alt="Angkringan Metro" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Angkringan Metro</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/bukit_sakura_kemiling.jpg" alt="Bukit Sakura Kemiling" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Bukit Sakura Kemiling</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/cafe_rumah_kayu.jpg" alt="Cafe Rumah Kayu" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Cafe Rumah Kayu</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/curug_tujuh.jpg" alt="Curug Tujuh" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Curug Tujuh</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/danau_ranau.jpg" alt="Danau Ranau" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Danau Ranau</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/danau_suoh.jpg" alt="Danau Suoh" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Danau Suoh</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/danau_tirta_gangga.jpg" alt="Danau Tirta Gangga" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Danau Tirta Gangga</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="budaya">
+        <div class="rec-media bg-gradient-to-br from-amber-400 to-orange-500">
+          <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/islamic_center_lampung_tengah.jpg" alt="Islamic Center Lampung Tengah" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Ikon & Budaya</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Islamic Center Lampung Tengah</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="budaya">
+        <div class="rec-media bg-gradient-to-br from-amber-400 to-orange-500">
+          <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/islamic_center_metro.jpg" alt="Islamic Center Metro" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Ikon & Budaya</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Islamic Center Metro</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/kedai_kopi_robusta_lampung.jpg" alt="Kedai Kopi Robusta Lampung" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Kedai Kopi Robusta Lampung</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/kedai_senja_sultan_agung.jpg" alt="Kedai Senja Sultan Agung" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Kedai Senja Sultan Agung</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/kopi_liwa.jpg" alt="Kopi Liwa" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Kopi Liwa</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/kopi_robusta_way_kanan.jpg" alt="Kopi Robusta Way Kanan" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Kopi Robusta Way Kanan</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/lembah_hijau.jpg" alt="Lembah Hijau" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Lembah Hijau</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="budaya">
+        <div class="rec-media bg-gradient-to-br from-amber-400 to-orange-500">
+          <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/masjid_agung_tubaba.jpg" alt="Masjid Agung Tubaba" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Ikon & Budaya</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Masjid Agung Tubaba</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/mie_khodon.jpg" alt="Mie Khodon" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Mie Khodon</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="budaya">
+        <div class="rec-media bg-gradient-to-br from-amber-400 to-orange-500">
+          <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/museum_lampung.jpg" alt="Museum Lampung" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Ikon & Budaya</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Museum Lampung</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/navara_city_park.jpg" alt="Navara City Park" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Navara City Park</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pantai_gigi_hiu.jpg" alt="Pantai Gigi Hiu" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pantai Gigi Hiu</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pantai_klara.jpg" alt="Pantai Klara" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pantai Klara</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pantai_kyokko.jpg" alt="Pantai Kyokko" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pantai Kyokko</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pantai_labuhan_jukung.jpg" alt="Pantai Labuhan Jukung" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pantai Labuhan Jukung</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pantai_mutun.jpg" alt="Pantai Mutun" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pantai Mutun</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pantai_puri_gading.jpg" alt="Pantai Puri Gading" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pantai Puri Gading</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pantai_sari_ringgung.jpg" alt="Pantai Sari Ringgung" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pantai Sari Ringgung</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pantai_tanjung_setia.jpg" alt="Pantai Tanjung Setia" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pantai Tanjung Setia</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="budaya">
+        <div class="rec-media bg-gradient-to-br from-amber-400 to-orange-500">
+          <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pendopo_pringsewu.jpg" alt="Pendopo Pringsewu" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Ikon & Budaya</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pendopo Pringsewu</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pindang_sehat_gunung_sugih.jpg" alt="Pindang Sehat Gunung Sugih" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pindang Sehat Gunung Sugih</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pulau_pahawang.jpg" alt="Pulau Pahawang" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pulau Pahawang</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pulau_pisang.jpg" alt="Pulau Pisang" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pulau Pisang</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pulau_tegal_mas.jpg" alt="Pulau Tegal Mas" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pulau Tegal Mas</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pulau_wayang.jpg" alt="Pulau Wayang" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pulau Wayang</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pulau_wayang2.jpg" alt="Pulau Wayang 2" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pulau Wayang 2</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pulau_wayang3.jpg" alt="Pulau Wayang 3" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pulau Wayang 3</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="bahari">
+        <div class="rec-media bg-gradient-to-br from-sky-400 to-teal-500">
+          <i class="fa-solid fa-water" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/pulau_wayang4.jpg" alt="Pulau Wayang 4" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Bahari</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Pulau Wayang 4</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/puncak_mas.jpg" alt="Puncak Mas" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Puncak Mas</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="alam">
+        <div class="rec-media bg-gradient-to-br from-emerald-400 to-green-600">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/rawa_pesisir_mesuji.jpg" alt="Rawa Pesisir Mesuji" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Alam & Satwa</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">Rawa Pesisir Mesuji</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/rm_khas_kotabumi.jpg" alt="RM Khas Kotabumi" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">RM Khas Kotabumi</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/rm_khas_krui.jpg" alt="RM Khas Krui" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">RM Khas Krui</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/rm_khas_menggala.jpg" alt="RM Khas Menggala" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">RM Khas Menggala</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/rm_khas_pringsewu.jpg" alt="RM Khas Pringsewu" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">RM Khas Pringsewu</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/rm_khas_sekampung.jpg" alt="RM Khas Sekampung" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">RM Khas Sekampung</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/rm_khas_tubaba.jpg" alt="RM Khas Tubaba" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">RM Khas Tubaba</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/rm_pondok_rasa_kedaton.jpg" alt="RM Pondok Rasa Kedaton" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">RM Pondok Rasa Kedaton</h3>
+        </div>
+      </article>
+      <article class="rec-card" data-cat="kuliner">
+        <div class="rec-media bg-gradient-to-br from-rose-400 to-red-500">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <img src="assets/images/destinasi/rm_saung_kito_enggal.jpg" alt="RM Saung Kito Enggal" loading="lazy" onerror="this.remove()">
+          <span class="rec-badge">Kuliner</span>
+        </div>
+        <div class="p-5">
+          <h3 class="text-base font-black text-slate-900">RM Saung Kito Enggal</h3>
+        </div>
+      </article>
+      </div>
+
+      <p class="filter-empty hidden mt-8 text-sm text-slate-500">Belum ada rekomendasi di kategori ini.</p>
+
+      <!-- Ajakan ke aplikasi -->
+      <div class="mt-14 rounded-3xl bg-slate-900 text-white p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <p class="text-lg sm:text-xl font-extrabold max-w-xl leading-snug">Sudah ada tujuan? Susun urutan perjalananmu dan cek kepadatannya di aplikasi SmartTrip.</p>
+        <a href="unduh.html" class="inline-flex justify-center px-6 py-3 rounded-full bg-white text-slate-900 text-sm font-bold hover:bg-slate-100 transition">Install ke HP</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-8">
+        <a href="index.html" class="inline-flex w-fit items-center rounded-xl bg-white px-3 py-2 shadow-sm">
+          <img src="assets/images/logo.png" alt="SmartTrip" class="h-10 w-auto">
+        </a>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-xs font-bold text-slate-300">
+          <a href="index.html" class="hover:text-white transition">Beranda</a>
+          <a href="destinasi.html" class="hover:text-white transition">Rekomendasi</a>
+          <a href="fitur.html" class="hover:text-white transition">Fitur</a>
+          <a href="pjbl.html" class="hover:text-white transition">Info PjBL</a>
+          <a href="kontak.html#kontak" class="hover:text-white transition">Kontak</a>
+          <a href="unduh.html" class="hover:text-white transition">Unduh App</a>
+        </div>
+      </div>
+      <div class="mb-8 flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-6 text-xs text-slate-300">
+        <a href="https://instagram.com/smarttrip_dev" target="_blank" rel="noopener" class="hover:text-white transition inline-flex items-center gap-2">
+          <i class="fa-brands fa-instagram"></i>@smarttrip_dev
+        </a>
+        <a href="mailto:info@smarttrip.dev" class="hover:text-white transition inline-flex items-center gap-2">
+          <i class="fa-solid fa-envelope"></i>info@smarttrip.dev
+        </a>
+        <span class="inline-flex items-center gap-2">
+          <i class="fa-solid fa-location-dot"></i>Bandar Lampung, Indonesia
+        </span>
+      </div>
+      <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+        &copy; 2026 SmartTrip. All rights reserved. Platform Pariwisata Cerdas Lampung.
+      </div>
+    </div>
+  </footer>
+
+  <!-- File Custom JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>
